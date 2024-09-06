@@ -1,0 +1,6 @@
+# robots.txt for https://planmate.info/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.planmate.info/sitemap.xml
