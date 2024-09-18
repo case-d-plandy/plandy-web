@@ -21,8 +21,14 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
       "@pages": ["./src/pages"],
-      "@pages/*": ["./src/pages/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@providers": ["./src/providers"],
+      "@providers/*": ["./src/providers/*"],
+      "@theme": ["./src/theme"],
+      "@theme/*": ["./src/theme/*"]
     }
   },
   "include": ["src"],

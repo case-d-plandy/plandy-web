@@ -19,6 +19,7 @@ export default [
       import: pluginImport
     },
     rules: {
+      "no-console": "error",
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
       "no-restricted-imports": [
