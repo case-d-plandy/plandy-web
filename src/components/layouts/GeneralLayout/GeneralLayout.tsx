@@ -1,7 +1,7 @@
 import Container from "@components/atoms/Container";
 import { PropsWithChildren, ReactNode } from "react";
 
-import { StyledGeneralLayout } from "./GeneralLayout.styles";
+import { Main, StyledGeneralLayout } from "./GeneralLayout.styles";
 
 interface GeneralLayoutProps {
   header?: ReactNode;
@@ -12,7 +12,9 @@ function GeneralLayout({ children, header, footer }: PropsWithChildren<GeneralLa
   return (
     <StyledGeneralLayout>
       {header}
-      <Container>{children}</Container>
+      <Main>
+        <Container>{children}</Container>
+      </Main>
       {footer}
     </StyledGeneralLayout>
   );
