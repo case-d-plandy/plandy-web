@@ -6,6 +6,7 @@ function PrivacyPage() {
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
       <h1>Privacy Policy</h1>
+      <p>Terms and conditions</p>
     </GeneralLayout>
   );
 }

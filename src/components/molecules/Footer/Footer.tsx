@@ -1,5 +1,6 @@
 import Button from "@components/atoms/Button";
 import Container from "@components/atoms/Container";
+import { Link } from "react-router-dom";
 
 import { Copyright, Divider, InfoBox, PolicyButtonGroup, StyledFooter } from "./Footer.styles";
 
@@ -9,14 +10,18 @@ function Footer() {
       <Container>
         <Divider />
         <InfoBox>
-          <Copyright>Copyright © 2024 Plan Mate</Copyright>
+          <Copyright>Copyright © {new Date().getFullYear()} Plan Mate</Copyright>
           <PolicyButtonGroup>
-            <Button variant={"text"} size={"small"}>
-              Terms
-            </Button>
-            <Button variant={"text"} size={"small"}>
-              Privacy Policy
-            </Button>
+            <Link to={"/terms"}>
+              <Button variant={"text"} size={"small"}>
+                Terms
+              </Button>
+            </Link>
+            <Link to={"/privacy"}>
+              <Button variant={"text"} size={"small"}>
+                Privacy Policy
+              </Button>
+            </Link>
           </PolicyButtonGroup>
         </InfoBox>
       </Container>
