@@ -2,6 +2,9 @@
 
 import "basic-styled";
 
+import type breakpoints from "@theme/breakpoints";
+import type spacing from "@theme/spacing";
+
 declare module "basic-styled" {
   export interface BasicTheme {
     palette: {
@@ -12,5 +15,7 @@ declare module "basic-styled" {
       subText: string;
       background: string;
     };
+    spacing: typeof spacing;
+    breakpoints: typeof breakpoints;
   }
 }

@@ -42,6 +42,13 @@ export default [
         }
       ],
       "react/react-in-jsx-scope": "off"
+    },
+    settings: {
+      "import/resolver": {
+        node: {
+          extensions: [".js", ".mjs", ".jsx", ".ts", ".mts", ".tsx"]
+        }
+      }
     }
   }
 ];

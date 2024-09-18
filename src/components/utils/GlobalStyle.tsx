@@ -7,6 +7,8 @@ function GlobalStyle() {
 const StyledGlobal = styled.style`
   html,
   body {
+    height: 100%;
+    font-family: "Pretendard Variable", serif;
     background-color: ${({
       theme: {
         palette: { background }
@@ -17,6 +19,9 @@ const StyledGlobal = styled.style`
         palette: { mainText }
       }
     }) => mainText};
+  }
+  #root {
+    height: 100%;
   }
 `;
 
