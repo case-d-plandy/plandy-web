@@ -29,6 +29,8 @@
       "@pages/*": ["./src/pages/*"],
       "@providers": ["./src/providers"],
       "@providers/*": ["./src/providers/*"],
+      "@stores": ["./src/stores"],
+      "@stores/*": ["./src/stores/*"],
       "@theme": ["./src/theme"],
       "@theme/*": ["./src/theme/*"]
     }

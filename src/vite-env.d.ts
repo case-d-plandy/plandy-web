@@ -7,6 +7,7 @@ import type spacing from "@theme/spacing";
 
 declare module "basic-styled" {
   export interface BasicTheme {
+    mode: "light" | "dark";
     palette: {
       primary: string;
       secondary: string;

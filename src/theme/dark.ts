@@ -3,6 +3,7 @@ import spacing from "@theme/spacing";
 import type { BasicTheme } from "basic-styled";
 
 const dark: BasicTheme = {
+  mode: "dark",
   palette: {
     primary: "#C5CAFC",
     secondary: "#FCC5CB",

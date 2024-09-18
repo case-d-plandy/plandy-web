@@ -29,6 +29,10 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "src/providers")
       },
       {
+        find: `@stores`,
+        replacement: path.resolve(__dirname, "src/stores")
+      },
+      {
         find: `@theme`,
         replacement: path.resolve(__dirname, "src/theme")
       }

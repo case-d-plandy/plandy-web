@@ -3,6 +3,7 @@ import spacing from "@theme/spacing";
 import type { BasicTheme } from "basic-styled";
 
 const light: BasicTheme = {
+  mode: "light",
   palette: {
     primary: "#959EF9",
     secondary: "#F9959E",
