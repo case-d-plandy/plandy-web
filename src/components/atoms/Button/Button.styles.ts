@@ -3,6 +3,9 @@ import styled from "basic-styled";
 import type { ButtonProps } from "./Button";
 
 export const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   color: ${({ theme: { palette } }) => palette.mainText};
 
