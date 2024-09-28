@@ -13,6 +13,7 @@ export const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: ${({ theme: { spacing } }) => `-${spacing(1)}px`};
 `;
 
 export const Logo = styled.div`

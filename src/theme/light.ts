@@ -14,7 +14,11 @@ const light: BasicTheme = {
     subText: "rgb(0, 0, 0, 0.451)",
     background: "#FAFAFA",
     grey,
-    border: grey["300"]
+    box: {
+      hover: "rgba(35, 42, 61, 0.03)",
+      active: "rgba(35, 42, 61, 0.09)",
+      border: grey["300"]
+    }
   },
   typography,
   spacing,

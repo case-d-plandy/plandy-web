@@ -54,13 +54,11 @@ export const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>
   }};
 
   &:hover {
-    ${({ theme: { mode }, variant }) => {
+    ${({ theme: { palette }, variant }) => {
       switch (variant) {
         case "text":
           return {
-            // TODO add theme color
-            backgroundColor:
-              mode === "dark" ? "rgba(238, 243, 255, 0.04)" : "rgba(35, 42, 61, 0.03)"
+            backgroundColor: palette.box.hover
           };
         // TODO add other variants
         default:
@@ -69,12 +67,11 @@ export const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>
     }};
   }
   &:active {
-    ${({ theme: { mode }, variant }) => {
+    ${({ theme: { palette }, variant }) => {
       switch (variant) {
         case "text":
           return {
-            backgroundColor:
-              mode === "dark" ? "rgba(238, 243, 255, 0.11)" : "rgba(35, 42, 61, 0.09)"
+            backgroundColor: palette.box.active
           };
         // TODO add other variants
         default:

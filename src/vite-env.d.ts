@@ -18,7 +18,11 @@ declare module "basic-styled" {
       subText: string;
       background: string;
       grey: typeof grey;
-      border: string;
+      box: {
+        hover: string;
+        active: string;
+        border: string;
+      };
     };
     typography: typeof typography;
     spacing: typeof spacing;

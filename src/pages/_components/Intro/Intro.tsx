@@ -1,3 +1,5 @@
+import Icon from "@components/atoms/Icon";
+
 import { ImageBox, StyledIntro, SubTitle, Title, TitleBox } from "./Intro.styles";
 
 function Intro() {
@@ -7,7 +9,9 @@ function Intro() {
         <Title>Plan Mate</Title>
         <SubTitle>Simple schedule planner with Apple CloudKit</SubTitle>
       </TitleBox>
-      <ImageBox>App Image Box</ImageBox>
+      <ImageBox>
+        <Icon name={"ImageBold"} />
+      </ImageBox>
     </StyledIntro>
   );
 }

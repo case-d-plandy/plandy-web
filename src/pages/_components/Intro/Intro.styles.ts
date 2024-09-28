@@ -82,6 +82,6 @@ export const ImageBox = styled.div`
   text-align: center;
   flex-grow: 1;
   padding: ${({ theme: { spacing } }) => `${spacing(20)}px ${spacing(10)}px`};
-  border: 1px solid ${({ theme: { palette } }) => palette.border};
+  border: 1px solid ${({ theme: { palette } }) => palette.box.border};
   border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
 `;

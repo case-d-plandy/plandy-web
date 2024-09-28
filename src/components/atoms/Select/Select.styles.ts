@@ -49,13 +49,13 @@ export const StyledSelect = styled.button<
   }};
 
   &:hover {
-    ${({ theme: { mode } }) => ({
-      backgroundColor: mode === "dark" ? "rgba(238, 243, 255, 0.04)" : "rgba(35, 42, 61, 0.03)"
+    ${({ theme: { palette } }) => ({
+      backgroundColor: palette.box.hover
     })};
   }
   &:active {
-    ${({ theme: { mode } }) => ({
-      backgroundColor: mode === "dark" ? "rgba(238, 243, 255, 0.11)" : "rgba(35, 42, 61, 0.09)"
+    ${({ theme: { palette } }) => ({
+      backgroundColor: palette.box.active
     })};
   }
   &:disabled {
@@ -81,7 +81,7 @@ export const OptionBox = styled.div<Pick<SelectProps, "size">>`
   left: 50%;
   transform: translateX(-50%);
   padding: ${({ theme: { spacing } }) => `${spacing(1)}px`};
-  border: 1px solid ${({ theme: { palette } }) => palette.border};
+  border: 1px solid ${({ theme: { palette } }) => palette.box.border};
   border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   background-color: ${({ theme: { palette } }) => palette.background};
 

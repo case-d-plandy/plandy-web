@@ -25,7 +25,11 @@ const dark: BasicTheme = {
       800: grey["100"],
       900: grey["900"]
     },
-    border: grey["600"]
+    box: {
+      hover: "rgba(238, 243, 255, 0.04)",
+      active: "rgba(238, 243, 255, 0.11)",
+      border: grey["600"]
+    }
   },
   typography,
   spacing,

@@ -10,7 +10,7 @@ export const Divider = styled.div`
   width: 100%;
   height: 1px;
   margin: ${({ theme: { spacing } }) => `0 0 ${spacing(3)}px`};
-  background-color: ${({ theme: { palette } }) => palette.border};
+  background-color: ${({ theme: { palette } }) => palette.box.border};
 `;
 
 export const InfoBox = styled.div`
