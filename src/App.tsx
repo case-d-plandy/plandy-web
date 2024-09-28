@@ -1,3 +1,4 @@
+import Error404Page from "@pages/error/404/page";
 import HowToConnectPage from "@pages/faq/how-to-connect/page";
 import FaqPage from "@pages/faq/page";
 import ConvenientSchedulingMethodPage from "@pages/guide/convenient-scheduling-method/page";
@@ -23,6 +24,7 @@ function App() {
           />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path={"*"} element={<Error404Page />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
