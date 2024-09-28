@@ -12,7 +12,7 @@ import {
 } from "react";
 
 import type { OptionProps } from "./Option";
-import { EndIcon, OptionBox, SelectInner, StyledSelect } from "./Select.styles";
+import { EndIcon, OptionBox, SelectInner, StyledSelect, Wrapper } from "./Select.styles";
 
 export interface SelectProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "onChange"> {
@@ -28,6 +28,7 @@ function Select({
   children,
   onChange,
   value,
+  size,
   endIcon,
   placeholder = "선택",
   ...props
@@ -82,24 +83,25 @@ function Select({
   }, [isOpen, children]);
 
   return (
-    <StyledSelect open={isOpen} onClick={handleClick} {...props}>
-      <div ref={ref}>
-        <SelectInner>
+    <Wrapper>
+      <StyledSelect open={isOpen} onClick={handleClick} size={size} {...props}>
+        <SelectInner ref={ref}>
           <span>{selectedOption?.props?.children || placeholder}</span>
           {endIcon && <EndIcon open={isOpen}>{endIcon}</EndIcon>}
-          {isOpen && (
-            <OptionBox
-              onClick={handleClickStopPropagation}
-              style={{
-                top: optionBoxTop
-              }}
-            >
-              {options}
-            </OptionBox>
-          )}
         </SelectInner>
-      </div>
-    </StyledSelect>
+      </StyledSelect>
+      {isOpen && (
+        <OptionBox
+          onClick={handleClickStopPropagation}
+          size={size}
+          style={{
+            top: optionBoxTop
+          }}
+        >
+          {options}
+        </OptionBox>
+      )}
+    </Wrapper>
   );
 }
 
