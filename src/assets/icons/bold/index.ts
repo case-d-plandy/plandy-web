@@ -5,3 +5,4 @@ export { default as ImageBold } from "./image-bold.svg";
 export { default as MoonBold } from "./moon-bold.svg";
 export { default as NoteBold } from "./note-bold.svg";
 export { default as SunBold } from "./sun-bold.svg";
+export { default as WarningBold } from "./warning-bold.svg";
