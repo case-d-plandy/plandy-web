@@ -14,12 +14,12 @@ function Footer() {
           <PolicyButtonGroup>
             <Link to={"/terms"}>
               <Button variant={"text"} size={"small"}>
-                Terms
+                Terms of service
               </Button>
             </Link>
             <Link to={"/privacy"}>
               <Button variant={"text"} size={"small"}>
-                Privacy Policy
+                Privacy policy
               </Button>
             </Link>
           </PolicyButtonGroup>

@@ -5,13 +5,21 @@ export const StyledIntro = styled.section`
   justify-content: space-between;
   align-items: center;
   gap: ${({ theme: { spacing } }) => `${spacing(4)}px`};
+
+  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const TitleBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme: { spacing } }) => `${spacing(1)}px`};
-  padding: ${({ theme: { spacing } }) => `${spacing(20)}px`} 0px;
+  padding: ${({ theme: { spacing } }) => `${spacing(20)}px 0px`};
+
+  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+    padding: ${({ theme: { spacing } }) => `0 0px ${spacing(20)}px`};
+  }
 `;
 
 export const Title = styled.h1`
@@ -32,6 +40,18 @@ export const Title = styled.h1`
     fontWeight: 700,
     letterSpacing: display.large.letterSpacing
   })};
+
+  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+    ${({
+      theme: {
+        typography: { display }
+      }
+    }) => ({
+      fontSize: display.small.size,
+      fontWeight: 700,
+      letterSpacing: display.small.letterSpacing
+    })};
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -44,6 +64,18 @@ export const SubTitle = styled.h2`
     fontWeight: 500,
     letterSpacing: headline.large.letterSpacing
   })};
+
+  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+    ${({
+      theme: {
+        typography: { headline }
+      }
+    }) => ({
+      fontSize: headline.small.size,
+      fontWeight: 500,
+      letterSpacing: headline.small.letterSpacing
+    })};
+  }
 `;
 
 export const ImageBox = styled.div`
