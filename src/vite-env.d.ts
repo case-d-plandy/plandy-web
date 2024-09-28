@@ -3,6 +3,7 @@
 import "basic-styled";
 
 import type breakpoints from "@theme/breakpoints";
+import grey from "@theme/colors/grey";
 import type spacing from "@theme/spacing";
 import type typography from "@theme/typography";
 
@@ -16,6 +17,8 @@ declare module "basic-styled" {
       mainText: string;
       subText: string;
       background: string;
+      grey: typeof grey;
+      border: string;
     };
     typography: typeof typography;
     spacing: typeof spacing;

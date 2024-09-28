@@ -1,4 +1,5 @@
 import breakpoints from "@theme/breakpoints";
+import grey from "@theme/colors/grey";
 import spacing from "@theme/spacing";
 import typography from "@theme/typography";
 import type { BasicTheme } from "basic-styled";
@@ -11,7 +12,9 @@ const light: BasicTheme = {
     tertiary: "#87D1D4",
     mainText: "rgb(0, 0, 0, 0.867)",
     subText: "rgb(0, 0, 0, 0.451)",
-    background: "#FAFAFA"
+    background: "#FAFAFA",
+    grey,
+    border: grey["300"]
   },
   typography,
   spacing,

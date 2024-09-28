@@ -81,7 +81,7 @@ export const OptionBox = styled.div<Pick<SelectProps, "size">>`
   left: 50%;
   transform: translateX(-50%);
   padding: ${({ theme: { spacing } }) => `${spacing(1)}px`};
-  border: 1px solid ${({ theme: { palette } }) => palette.subText};
+  border: 1px solid ${({ theme: { palette } }) => palette.border};
   border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   background-color: ${({ theme: { palette } }) => palette.background};
 
