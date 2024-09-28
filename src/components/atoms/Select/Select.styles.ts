@@ -16,24 +16,30 @@ export const StyledSelect = styled.button<
   background-color: transparent;
   color: ${({ theme: { palette } }) => palette.mainText};
 
-  ${({ theme: { spacing }, size }) => {
+  ${({
+    theme: {
+      typography: { title, body },
+      spacing
+    },
+    size
+  }) => {
     switch (size) {
       case "large":
         return {
           padding: `${spacing(1.5)}px`,
-          fontSize: "15px",
-          fontWeight: 500
+          fontSize: title.large.size,
+          fontWeight: title.large.weight
         };
       case "small":
         return {
           padding: `${spacing(1)}px`,
-          fontSize: "12px",
+          fontSize: body.small.size,
           fontWeight: 500
         };
       default:
         return {
           padding: `${spacing(1.25)}px`,
-          fontSize: "14px",
+          fontSize: title.medium.size,
           fontWeight: 500
         };
     }

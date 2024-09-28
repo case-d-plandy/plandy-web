@@ -1,5 +1,6 @@
 import breakpoints from "@theme/breakpoints";
 import spacing from "@theme/spacing";
+import typography from "@theme/typography";
 import type { BasicTheme } from "basic-styled";
 
 const light: BasicTheme = {
@@ -12,6 +13,7 @@ const light: BasicTheme = {
     subText: "rgb(0, 0, 0, 0.451)",
     background: "#FAFAFA"
   },
+  typography,
   spacing,
   breakpoints
 };

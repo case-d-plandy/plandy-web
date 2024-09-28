@@ -21,8 +21,17 @@ export const InfoBox = styled.div`
 `;
 
 export const Copyright = styled.span`
-  font-size: 12px;
-  color: ${({ theme: { palette } }) => palette.subText};
+  ${({
+    theme: {
+      typography: { body },
+      palette
+    }
+  }) => ({
+    fontSize: body.small.size,
+    fontWeight: body.small.weight,
+    letterSpacing: body.small.letterSpacing,
+    color: palette.subText
+  })}
 `;
 
 export const PolicyButtonGroup = styled.div`

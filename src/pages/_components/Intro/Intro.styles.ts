@@ -15,8 +15,6 @@ export const TitleBox = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 50px;
-  font-weight: 700;
   background: linear-gradient(
     90deg,
     ${({ theme: { palette } }) => palette.secondary} 5%,
@@ -24,11 +22,28 @@ export const Title = styled.h1`
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  ${({
+    theme: {
+      typography: { display }
+    }
+  }) => ({
+    fontSize: display.large.size,
+    fontWeight: 700,
+    letterSpacing: display.large.letterSpacing
+  })};
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 30px;
-  font-weight: 500;
+  ${({
+    theme: {
+      typography: { headline }
+    }
+  }) => ({
+    fontSize: headline.large.size,
+    fontWeight: 500,
+    letterSpacing: headline.large.letterSpacing
+  })};
 `;
 
 export const ImageBox = styled.div`

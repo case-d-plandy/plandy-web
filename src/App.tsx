@@ -1,3 +1,7 @@
+import HowToConnectPage from "@pages/faq/how-to-connect/page";
+import FaqPage from "@pages/faq/page";
+import ConvenientSchedulingMethodPage from "@pages/guide/convenient-scheduling-method/page";
+import GuidePage from "@pages/guide/page";
 import HomePage from "@pages/page";
 import PrivacyPage from "@pages/privacy/page";
 import TermsPage from "@pages/terms/page";
@@ -10,6 +14,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path={"/faq/how-to-connect"} element={<HowToConnectPage />} />
+          <Route path="/guide" element={<GuidePage />} />
+          <Route
+            path={"/guide/convenient-scheduling-method"}
+            element={<ConvenientSchedulingMethodPage />}
+          />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>

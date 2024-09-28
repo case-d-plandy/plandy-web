@@ -6,6 +6,7 @@ export const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   color: ${({ theme: { palette } }) => palette.mainText};
 
@@ -23,24 +24,30 @@ export const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>
     }
   }};
 
-  ${({ theme: { spacing }, size }) => {
+  ${({
+    theme: {
+      typography: { title, body },
+      spacing
+    },
+    size
+  }) => {
     switch (size) {
       case "large":
         return {
           padding: `${spacing(1.5)}px`,
-          fontSize: "15px",
-          fontWeight: 500
+          fontSize: title.large.size,
+          fontWeight: title.large.weight
         };
       case "small":
         return {
           padding: `${spacing(1)}px`,
-          fontSize: "12px",
+          fontSize: body.small.size,
           fontWeight: 500
         };
       default:
         return {
           padding: `${spacing(1.25)}px`,
-          fontSize: "14px",
+          fontSize: title.medium.size,
           fontWeight: 500
         };
     }
