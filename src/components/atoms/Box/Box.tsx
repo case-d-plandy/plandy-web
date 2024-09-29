@@ -1,5 +1,5 @@
 import type { Properties } from "csstype";
-import { HTMLAttributes, PropsWithChildren } from "react";
+import { HTMLAttributes } from "react";
 
 import { StyledBox } from "./Box.styles";
 
@@ -17,7 +17,7 @@ export type BoxFlexibleProps = Pick<
   | "flexShrink"
 >;
 
-export interface BoxProps extends HTMLAttributes<HTMLDivElement>, BoxFlexibleProps {
+export interface BoxSpacingProps {
   gap?: number;
   p?: number;
   pl?: number;
@@ -29,10 +29,16 @@ export interface BoxProps extends HTMLAttributes<HTMLDivElement>, BoxFlexiblePro
   mr?: number;
   mt?: number;
   mb?: number;
+}
+
+export interface BoxProps
+  extends HTMLAttributes<HTMLDivElement>,
+    BoxSpacingProps,
+    BoxFlexibleProps {
   css?: Properties;
 }
 
-function Box({ children, ...props }: PropsWithChildren<BoxProps>) {
+function Box({ children, ...props }: BoxProps) {
   return <StyledBox {...props}>{children}</StyledBox>;
 }
 

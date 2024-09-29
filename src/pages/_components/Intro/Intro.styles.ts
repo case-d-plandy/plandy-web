@@ -7,7 +7,7 @@ export const StyledIntro = styled.section`
   gap: ${({ theme: { spacing } }) => `${spacing(4)}px`};
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `;
 

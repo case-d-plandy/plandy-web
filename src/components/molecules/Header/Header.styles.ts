@@ -7,6 +7,7 @@ export const StyledHeader = styled.header`
   justify-content: center;
   padding: ${({ theme: { spacing } }) => `${spacing(3)}px ${spacing(3)}px`};
   backdrop-filter: blur(8px);
+  z-index: 1;
 `;
 
 export const HeaderInner = styled.div`

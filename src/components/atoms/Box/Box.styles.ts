@@ -1,14 +1,35 @@
 import styled from "basic-styled";
 
-import type { BoxFlexibleProps, BoxProps } from "./Box";
+import type { BoxFlexibleProps, BoxProps, BoxSpacingProps } from "./Box";
 
 export const StyledBox = styled.div<
-  Pick<BoxProps, "p" | "pt" | "pr" | "pb" | "pl" | "m" | "mt" | "mr" | "mb" | "ml" | "css"> &
-    BoxFlexibleProps
+  Pick<BoxProps, "css" | keyof BoxSpacingProps | keyof BoxFlexibleProps>
 >`
-  ${({ theme: { spacing }, css, ...props }) => {
-    const { p, pt, pr, pb, pl, m, mt, mr, mb, ml, ...flexibleProps } = props;
-
+  ${({
+    theme: { spacing },
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    gap,
+    display,
+    alignItems,
+    justifyContent,
+    flex,
+    flexWrap,
+    flexDirection,
+    flexGrow,
+    flexFlow,
+    flexBasis,
+    flexShrink,
+    css
+  }) => {
     const padding = {
       paddingTop: pt ? `${spacing(pt)}px` : p ? `${spacing(p)}px` : undefined,
       paddingRight: pr ? `${spacing(pr)}px` : p ? `${spacing(p)}px` : undefined,
@@ -23,11 +44,30 @@ export const StyledBox = styled.div<
       marginLeft: ml ? `${spacing(ml)}px` : m ? `${spacing(m)}px` : undefined
     };
 
-    return {
+    const cssObject = {
+      gap: gap ? `${spacing(gap)}px` : undefined,
       ...padding,
       ...margin,
-      ...flexibleProps,
+      display,
+      alignItems,
+      justifyContent,
+      flex,
+      flexWrap,
+      flexDirection,
+      flexGrow,
+      flexFlow,
+      flexBasis,
+      flexShrink,
       ...css
     };
+
+    Object.keys(cssObject).forEach((key) => {
+      const asKey = key as keyof typeof cssObject;
+      if (cssObject[asKey] === undefined) {
+        delete cssObject[asKey];
+      }
+    });
+
+    return cssObject;
   }}
 `;
