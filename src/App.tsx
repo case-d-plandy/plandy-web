@@ -9,28 +9,31 @@ import HomePage from "@pages/page";
 import PrivacyPage from "@pages/privacy/page";
 import TermsPage from "@pages/terms/page";
 import ThemeProvider from "@providers/ThemeProvider";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <ErrorBoundary fallback={<Error500Page />}>
-      <ThemeProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/faq" element={<FaqPage />} />
-            <Route path={"/faq/how-to-connect"} element={<HowToConnectPage />} />
-            <Route path="/guide" element={<GuidePage />} />
-            <Route
-              path={"/guide/convenient-scheduling-method"}
-              element={<ConvenientSchedulingMethodPage />}
-            />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path={"*"} element={<Error404Page />} />
-          </Routes>
-        </BrowserRouter>
-      </ThemeProvider>
+      <HelmetProvider>
+        <ThemeProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/faq" element={<FaqPage />} />
+              <Route path={"/faq/how-to-connect"} element={<HowToConnectPage />} />
+              <Route path="/guide" element={<GuidePage />} />
+              <Route
+                path={"/guide/convenient-scheduling-method"}
+                element={<ConvenientSchedulingMethodPage />}
+              />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path={"*"} element={<Error404Page />} />
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+      </HelmetProvider>
     </ErrorBoundary>
   );
 }

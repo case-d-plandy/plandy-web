@@ -6,6 +6,7 @@ export const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: initial;
   gap: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   color: ${({ theme: { palette } }) => palette.mainText};

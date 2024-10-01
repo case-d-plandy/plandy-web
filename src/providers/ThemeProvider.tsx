@@ -6,6 +6,7 @@ import createBuilder from "basic-styled/setup/createBuilder";
 import ResetStyle from "basic-styled/setup/ResetStyle";
 import BasicThemeProvider from "basic-styled/setup/ThemeProvider";
 import { PropsWithChildren, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 createBuilder({
   prefix: "plandy"
@@ -39,6 +40,12 @@ function ThemeProvider({ children }: PropsWithChildren) {
 
   return (
     <BasicThemeProvider theme={mode === "dark" ? dark : light}>
+      <Helmet>
+        <meta
+          name="theme-color"
+          content={mode === "dark" ? dark.palette.background : light.palette.background}
+        />
+      </Helmet>
       <ResetStyle />
       <GlobalStyle />
       {children}
