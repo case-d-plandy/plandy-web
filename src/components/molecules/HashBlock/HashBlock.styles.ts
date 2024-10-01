@@ -6,6 +6,9 @@ export const StyledHashBlock = styled.div`
     padding: ${({ theme: { spacing } }) => `0 ${spacing(2.5)}px`};
     & li {
       padding: ${({ theme: { spacing } }) => `${spacing(0.5)}px 0`};
+      & ul {
+        list-style: square;
+      }
     }
   }
 `;

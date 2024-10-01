@@ -118,7 +118,7 @@ function TermsPage() {
           onClick={handleClick("change-suspension-termination-of-service")}
         />
         <HashBlock
-          title={"Privacy Policy"}
+          title={"Privacy policy"}
           description={
             "User privacy information and personal information will be handled appropriately in\n" +
             "          accordance with the privacy policy. By using this service, you agree to our privacy\n" +
@@ -132,7 +132,7 @@ function TermsPage() {
               size={"small"}
               startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
             >
-              Privacy Policy
+              Privacy policy
             </Button>
           </Link>
         </HashBlock>

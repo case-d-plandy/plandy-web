@@ -1,15 +1,14 @@
-import Box from "@components/atoms/Box";
 import Button from "@components/atoms/Button";
 import Divider from "@components/atoms/Divider";
 import Icon from "@components/atoms/Icon";
 import Typography from "@components/atoms/Typography";
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, ReactNode, useState } from "react";
 
 import { HashTag, HashTitle, StyledHashBlock, TitleWrapper } from "./HashBlock.styles";
 
 interface HashBlockProps {
-  title: string;
-  description?: string;
+  title: ReactNode;
+  description?: ReactNode;
   onClick?: () => void;
 }
 
@@ -37,10 +36,10 @@ function HashBlock({ children, title, description, onClick }: PropsWithChildren<
           <Divider />
         </TitleWrapper>
       )}
-      <Box display={"flex"} flexDirection={"column"} gap={2} pt={2} pb={2}>
-        {description && <Typography>{description}</Typography>}
+      <Typography display={"flex"} flexDirection={"column"} gap={2} pt={2} pb={2}>
+        {description}
         {children}
-      </Box>
+      </Typography>
     </StyledHashBlock>
   );
 }
