@@ -29,7 +29,7 @@ function Header() {
           <Link to={"/"}>
             <Button variant={"text"} size={"small"}>
               <Logo>
-                <img width={30} height={30} src={"/icons/apple-icon.png"} alt={"Plan Mate Logo"} />
+                <img width={30} height={30} src={"/icons/apple-icon.png"} alt={"Plandy Logo"} />
               </Logo>
             </Button>
           </Link>

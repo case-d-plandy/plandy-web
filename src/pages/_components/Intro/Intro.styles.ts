@@ -17,8 +17,12 @@ export const TitleBox = styled.div`
   gap: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   padding: ${({ theme: { spacing } }) => `${spacing(20)}px 0px`};
 
+  & svg {
+    color: ${({ theme: { palette } }) => palette.primary};
+  }
+
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
-    padding: ${({ theme: { spacing } }) => `0 0px ${spacing(20)}px`};
+    padding: 0;
   }
 `;
 

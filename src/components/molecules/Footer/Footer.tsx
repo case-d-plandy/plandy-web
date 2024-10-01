@@ -10,7 +10,7 @@ function Footer() {
       <Container>
         <Divider />
         <InfoBox>
-          <Copyright>Copyright © {new Date().getFullYear()} Plan Mate</Copyright>
+          <Copyright>Copyright © {new Date().getFullYear()} Plandy</Copyright>
           <PolicyButtonGroup>
             <Link to={"/terms"}>
               <Button variant={"text"} size={"small"}>

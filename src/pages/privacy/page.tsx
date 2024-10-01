@@ -15,7 +15,7 @@ function PrivacyPage() {
         Privacy policy
       </Typography>
       <Typography>
-        {`This privacy policy explains the privacy policy for the service and application "Plan Mate" (hereinafter referred to as "the Service") provided by Danah Kim (hereinafter referred to as "the Service Provider").`}
+        {`This privacy policy explains the privacy policy for the service and application "Plandy" (hereinafter referred to as "the Service") provided by Danah Kim (hereinafter referred to as "the Service Provider").`}
       </Typography>
       <Typography variant={"headline"} size={"small"} fontWeight={700} mt={4}>
         Information Collected by the Service
@@ -39,7 +39,7 @@ function PrivacyPage() {
             <Button
               variant={"text"}
               size={"small"}
-              startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+              startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
             >
               iCloud Reminder Apple Privacy Policy(opens new window)
             </Button>
@@ -60,7 +60,7 @@ function PrivacyPage() {
               <Button
                 variant={"text"}
                 size={"small"}
-                startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+                startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
               >
                 iCloud Calendar Apple Privacy Policy(opens new window)
               </Button>
@@ -69,7 +69,7 @@ function PrivacyPage() {
               <Button
                 variant={"text"}
                 size={"small"}
-                startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+                startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
               >
                 Google Calenda Google Privacy Policy(opens new window)
               </Button>
@@ -78,7 +78,7 @@ function PrivacyPage() {
               <Button
                 variant={"text"}
                 size={"small"}
-                startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+                startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
               >
                 Outlook Microsoft Privacy Policy(opens new window)
               </Button>
@@ -142,7 +142,7 @@ function PrivacyPage() {
             <Button
               variant={"text"}
               size={"small"}
-              startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+              startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
             >
               Google Calenda Google Privacy Policy(opens new window)
             </Button>
@@ -162,19 +162,19 @@ function PrivacyPage() {
             <Button
               variant={"text"}
               size={"small"}
-              startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+              startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
             >
               Google AdMob (Google, Inc.) | Google Advertising(opens new window)
             </Button>
           </Link>
           <div>
-            By using Plan Mate of the Paid subscription services, ad delivery will be stopped, and
+            By using Plandy of the Paid subscription services, ad delivery will be stopped, and
             information for the purpose of ad delivery will no longer be collected.
           </div>
         </HashBlock>
         <HashBlock
           title={"Contact"}
-          description={`For opinions, questions, complaints, or other inquiries regarding the handling of user information related to the privacy policy of the Service, please contact us using the email(planmate.official@gmail.com).`}
+          description={`For opinions, questions, complaints, or other inquiries regarding the handling of user information related to the privacy policy of the Service, please contact us using the email(plandy.official@gmail.com).`}
           to={"/privacy#contact"}
         />
       </Box>

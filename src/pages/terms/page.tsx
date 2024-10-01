@@ -16,7 +16,7 @@ function TermsPage() {
       </Typography>
       <Typography>
         {`We will explain the "terms of use" (hereinafter referred to as the
-              "terms") for the the service and application "Plan Mate" (hereinafter
+              "terms") for the the service and application "Plandy" (hereinafter
               referred to as "service") provided by Danah Kim (hereinafter referred to as the
               "service provider").`}
       </Typography>
@@ -126,7 +126,7 @@ function TermsPage() {
             <Button
               variant={"text"}
               size={"small"}
-              startIcon={<Icon name={"ShieldBold"} width={16} height={16} />}
+              startIcon={<Icon name={"ShieldOutline"} width={16} height={16} />}
             >
               Privacy policy
             </Button>
@@ -142,7 +142,7 @@ function TermsPage() {
         <HashBlock
           title={"Contact"}
           description={
-            "If you have any comments, questions, complaints, or other inquiries regarding the handling of user information regarding the terms of use of this service, please contact us using the email(planmate.official@gmail.com)."
+            "If you have any comments, questions, complaints, or other inquiries regarding the handling of user information regarding the terms of use of this service, please contact us using the email(plandy.official@gmail.com)."
           }
           to={"/terms#contact"}
         />

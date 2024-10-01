@@ -8,7 +8,7 @@ import BasicThemeProvider from "basic-styled/setup/ThemeProvider";
 import { PropsWithChildren, useEffect } from "react";
 
 createBuilder({
-  prefix: "plan-mate"
+  prefix: "plandy"
 });
 
 function ThemeProvider({ children }: PropsWithChildren) {
