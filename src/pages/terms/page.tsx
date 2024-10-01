@@ -6,13 +6,9 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function TermsPage() {
-  const navigate = useNavigate();
-
-  const handleClick = (hash: string) => () => navigate(`/terms#${hash}`);
-
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
       <Typography variant={"headline"} fontWeight={700} mt={2} mb={2}>
@@ -31,9 +27,9 @@ function TermsPage() {
             "By using this service, you are deemed to have agreed to this agreement. Please be sure to\n" +
             "          read these Terms before using this service."
           }
-          onClick={handleClick("general")}
+          to={"/terms#general"}
         />
-        <HashBlock title={"Disclaimer"} onClick={handleClick("disclaimer")}>
+        <HashBlock title={"Disclaimer"} to={"/terms#disclaimer"}>
           <ul>
             <li>
               {`Preparation of equipment and network environment to operate this application shall be
@@ -69,12 +65,12 @@ function TermsPage() {
         <HashBlock
           title={"Usage Fees"}
           description={"This application shall be basically free of charge."}
-          onClick={handleClick("usage-fees")}
+          to={"/terms#usage-fees"}
         />
         <HashBlock
           title={"Prohibited matter"}
           description={"When using this service, the user shall not perform the following acts."}
-          onClick={handleClick("prohibited-matter")}
+          to={"/terms#prohibited-matter"}
         >
           <ul>
             <li>Acts that violate copyrights, portrait rights, honor rights, privacy, etc.</li>
@@ -115,7 +111,7 @@ function TermsPage() {
             "The service provider may change, suspend, or terminate part or all of the service at any\n" +
             "          time for any reason without prior notice to the user."
           }
-          onClick={handleClick("change-suspension-termination-of-service")}
+          to={"/terms#change-suspension-termination-of-service"}
         />
         <HashBlock
           title={"Privacy policy"}
@@ -124,7 +120,7 @@ function TermsPage() {
             "          accordance with the privacy policy. By using this service, you agree to our privacy\n" +
             "          policy."
           }
-          onClick={handleClick("privacy-policy")}
+          to={"/terms#privacy-policy"}
         >
           <Link to={"/privacy"}>
             <Button
@@ -141,14 +137,14 @@ function TermsPage() {
           description={
             "The service provider may revise these Terms without obtaining the User's prior consent, and the User shall consent to this. The revised Terms of Use shall take effect from the time they are posted on this service."
           }
-          onClick={handleClick("change-to-terms-of-use")}
+          to={"/terms#change-to-terms-of-use"}
         />
         <HashBlock
           title={"Contact"}
           description={
             "If you have any comments, questions, complaints, or other inquiries regarding the handling of user information regarding the terms of use of this service, please contact us using the email(planmate.official@gmail.com)."
           }
-          onClick={handleClick("contact")}
+          to={"/terms#contact"}
         />
       </Box>
     </GeneralLayout>

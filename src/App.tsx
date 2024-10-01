@@ -13,9 +13,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <ErrorBoundary fallback={<Error500Page />}>
+    <ErrorBoundary fallback={<Error500Page />}>
+      <ThemeProvider>
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/faq" element={<FaqPage />} />
@@ -29,9 +29,9 @@ function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path={"*"} element={<Error404Page />} />
           </Routes>
-        </ErrorBoundary>
-      </BrowserRouter>
-    </ThemeProvider>
+        </BrowserRouter>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

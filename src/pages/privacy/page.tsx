@@ -6,13 +6,9 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function PrivacyPage() {
-  const navigate = useNavigate();
-
-  const handleClick = (hash: string) => () => navigate(`/privacy#${hash}`);
-
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
       <Typography variant={"headline"} fontWeight={700} mt={2} mb={2}>
@@ -28,7 +24,7 @@ function PrivacyPage() {
         <HashBlock
           title={"Reminder Information"}
           description={`The Service collects reminder information from the device with the user's consent. The collected information is used within the device to provide the following features of the Service and is not stored on external servers managed by the Service Provider.`}
-          onClick={handleClick("reminder-information")}
+          to={"/privacy#reminder-information"}
         >
           <ul>
             <li>Display and edit reminders</li>
@@ -52,7 +48,7 @@ function PrivacyPage() {
         <HashBlock
           title={"Calendar and Event Information"}
           description={`The Service collects calendar information (event information) from the device with the user's consent. The collected information is used within the device to provide the following features of the Service and is not stored on external servers managed by the Service Provider.`}
-          onClick={handleClick("calendar-and-event-information")}
+          to={"/privacy#calendar-and-event-information"}
         >
           <ul>
             <li>Display and edit calendars</li>
@@ -92,7 +88,7 @@ function PrivacyPage() {
         <HashBlock
           title={"Contact Information"}
           description={`The Service collects contact information (thumbnail photos, display names) from the device with the user's consent. The collected information is used within the device to provide the following features of the Service and is not stored on external servers managed by the Service Provider.`}
-          onClick={handleClick("contact-information")}
+          to={"/privacy#contact-information"}
         >
           <ul>
             <li>Display thumbnail photos and display names of event attendees</li>
@@ -102,7 +98,7 @@ function PrivacyPage() {
         <HashBlock
           title={"Feedback and Inquiry Information"}
           description={`When the user contacts the Service Provider for feedback or inquiries about the Service, the following information may be collected. The collected information is used to respond to inquiries and improve the Service.`}
-          onClick={handleClick("feedback-and-inquiry-information")}
+          to={"/privacy#feedback-and-inquiry-information"}
         >
           <ul>
             <li>Name</li>
@@ -116,7 +112,7 @@ function PrivacyPage() {
           description={
             "The Service collects the following usage data upon the commencement of Service use. The collected information is used to improve the Service."
           }
-          onClick={handleClick("usage-data")}
+          to={"/privacy#usage-data"}
         >
           <ul>
             <li>
@@ -155,7 +151,7 @@ function PrivacyPage() {
         <HashBlock
           title={"Information for Ad Delivery"}
           description={`The Service collects advertising identifiers (IDFA) with the user's consent. The collected information is used for ad delivery.`}
-          onClick={handleClick("information-for-ad-delivery")}
+          to={"/privacy#information-for-ad-delivery"}
         >
           <div>
             The Service uses third-party advertising services. These advertising service providers
@@ -179,7 +175,7 @@ function PrivacyPage() {
         <HashBlock
           title={"Contact"}
           description={`For opinions, questions, complaints, or other inquiries regarding the handling of user information related to the privacy policy of the Service, please contact us using the email(planmate.official@gmail.com).`}
-          onClick={handleClick("contact")}
+          to={"/privacy#contact"}
         />
       </Box>
     </GeneralLayout>

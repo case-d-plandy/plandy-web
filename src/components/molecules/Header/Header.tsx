@@ -23,7 +23,7 @@ function Header() {
   const handleChange = (newValue?: string) => setValue(newValue || "english");
 
   return (
-    <StyledHeader>
+    <StyledHeader id={"header"}>
       <Container>
         <HeaderInner>
           <Link to={"/"}>
