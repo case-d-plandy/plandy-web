@@ -3,6 +3,7 @@ import Container from "@components/atoms/Container";
 import Icon from "@components/atoms/Icon";
 import Select, { Option } from "@components/atoms/Select";
 import useThemeStore from "@stores/theme";
+import { GoogleAnalytics } from "@utils/google-analytics.ts";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,51 +14,69 @@ function Header() {
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
   const updateMode = useThemeStore((state) => state.updateMode);
 
-  const [value, setValue] = useState("english");
+  const [language, setLanguage] = useState("english");
 
   const handleClick = () => {
     updateTrigger("manual");
     updateMode(mode === "dark" ? "light" : "dark");
+    handleLogEvent("theme");
   };
 
-  const handleChange = (newValue?: string) => setValue(newValue || "english");
+  const handleChange = (newValue?: string) => setLanguage(newValue || "english");
+
+  const handleLogEvent = (label: string) => {
+    GoogleAnalytics.logEvent("click_top_nav", {
+      item_name: label
+    });
+  };
 
   return (
-    <StyledHeader id={"header"}>
+    <StyledHeader id="header">
       <Container>
         <HeaderInner>
-          <Link to={"/"}>
-            <Button variant={"text"} size={"small"}>
+          <Link to="/" onClick={() => handleLogEvent("logo")}>
+            <Button variant="text" size="small">
               <Logo>
-                <img width={30} height={30} src={"/icons/apple-icon.png"} alt={"Plandy Logo"} />
+                <img width={30} height={30} src="/icons/apple-icon.png" alt="Plandy Logo" />
               </Logo>
             </Button>
           </Link>
           <Adornment>
-            <Link to={"/faq"}>
-              <Button variant={"text"} size={"small"}>
+            <Link to="/faq" onClick={() => handleLogEvent("faq")}>
+              <Button variant="text" size="small">
                 FAQ
               </Button>
             </Link>
-            <Link to={"/guide"}>
-              <Button variant={"text"} size={"small"}>
+            <Link to="/guide" onClick={() => handleLogEvent("guide")}>
+              <Button variant="text" size="small">
                 Guide
               </Button>
             </Link>
             <Select
-              size={"small"}
+              data-testid="language-button"
+              aria-label={language}
+              size="small"
               onChange={handleChange}
-              value={value}
-              endIcon={<Icon name={"ArrowDownBold"} width={14} height={14} />}
+              value={language}
+              endIcon={<Icon name="ArrowDownBold" width={14} height={14} />}
             >
-              <Option value={"korea"}>한국어</Option>
-              <Option value={"english"}>English</Option>
+              <Option data-testid="language-option-korea" value="korea">
+                한국어
+              </Option>
+              <Option data-testid="language-option-english" value="english">
+                English
+              </Option>
             </Select>
-            <Button variant={"text"} onClick={handleClick}>
+            <Button
+              data-testid="theme-button"
+              aria-label={mode}
+              variant="text"
+              onClick={handleClick}
+            >
               {mode === "dark" ? (
-                <Icon name={"SunBold"} width={18} height={18} />
+                <Icon name="SunBold" width={18} height={18} />
               ) : (
-                <Icon name={"MoonBold"} width={18} height={18} />
+                <Icon name="MoonBold" width={18} height={18} />
               )}
             </Button>
           </Adornment>
