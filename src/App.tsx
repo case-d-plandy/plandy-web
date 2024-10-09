@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ErrorBoundary from "@components/utils/ErrorBoundary";
+import Error404Page from "@pages/error/404/page";
+import Error500Page from "@pages/error/500/page";
+import HowToConnectPage from "@pages/faq/how-to-connect/page";
+import FaqPage from "@pages/faq/page";
+import ConvenientSchedulingMethodPage from "@pages/guide/convenient-scheduling-method/page";
+import GuidePage from "@pages/guide/page";
+import HomePage from "@pages/page";
+import PrivacyPage from "@pages/privacy/page";
+import TermsPage from "@pages/terms/page";
+import ThemeProvider from "@providers/ThemeProvider";
+import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ErrorBoundary fallback={<Error500Page />}>
+      <HelmetProvider>
+        <ThemeProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/faq" element={<FaqPage />} />
+              <Route path={"/faq/how-to-connect"} element={<HowToConnectPage />} />
+              <Route path="/guide" element={<GuidePage />} />
+              <Route
+                path={"/guide/convenient-scheduling-method"}
+                element={<ConvenientSchedulingMethodPage />}
+              />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path={"*"} element={<Error404Page />} />
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+      </HelmetProvider>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
