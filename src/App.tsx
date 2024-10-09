@@ -21,15 +21,15 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/faq" element={<FaqPage />} />
-              <Route path={"/faq/how-to-connect"} element={<HowToConnectPage />} />
+              <Route path="/faq/how-to-connect" element={<HowToConnectPage />} />
               <Route path="/guide" element={<GuidePage />} />
               <Route
-                path={"/guide/convenient-scheduling-method"}
+                path="/guide/convenient-scheduling-method"
                 element={<ConvenientSchedulingMethodPage />}
               />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
-              <Route path={"*"} element={<Error404Page />} />
+              <Route path="*" element={<Error404Page />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

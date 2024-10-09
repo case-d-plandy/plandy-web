@@ -41,13 +41,17 @@ export default [
           tsx: "never"
         }
       ],
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never" }]
     },
     settings: {
       "import/resolver": {
         node: {
           extensions: [".js", ".mjs", ".jsx", ".ts", ".mts", ".tsx"]
         }
+      },
+      react: {
+        version: "detect"
       }
     }
   }

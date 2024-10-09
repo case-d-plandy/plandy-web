@@ -6,7 +6,7 @@ import Header from "@components/molecules/Header";
 function HowToConnectPage() {
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
-      <Typography variant={"headline"} fontWeight={700} mt={2} mb={2}>
+      <Typography variant="headline" fontWeight={700} mt={2} mb={2}>
         How to connect an external calendar（iCloud、Google、Outlook）
       </Typography>
       <Typography>
