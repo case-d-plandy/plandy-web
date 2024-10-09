@@ -2,8 +2,10 @@
 
 import "basic-styled";
 
-import type breakpoints from "@theme/breakpoints";
 import grey from "@theme/colors/grey";
+
+import type breakpoints from "@theme/breakpoints";
+
 import type spacing from "@theme/spacing";
 import type typography from "@theme/typography";
 

@@ -1,10 +1,12 @@
-import type { BoxFlexibleProps, BoxSpacingProps } from "@components/atoms/Box";
-import typography from "@theme/typography";
-import type { BasicTheme } from "basic-styled";
-import type { Properties } from "csstype";
 import { HTMLAttributes } from "react";
 
+import typography from "@theme/typography";
+
 import { StyledTypography } from "./Typography.styles";
+
+import type { BoxFlexibleProps, BoxSpacingProps } from "@components/atoms/Box";
+import type { BasicTheme } from "basic-styled";
+import type { Properties } from "csstype";
 
 export interface TypographyProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

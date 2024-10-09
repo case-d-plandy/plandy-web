@@ -1,3 +1,6 @@
+import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import ErrorBoundary from "@components/utils/ErrorBoundary";
 import Error404Page from "@pages/error/404/page";
 import Error500Page from "@pages/error/500/page";
@@ -9,8 +12,6 @@ import HomePage from "@pages/page";
 import PrivacyPage from "@pages/privacy/page";
 import TermsPage from "@pages/terms/page";
 import ThemeProvider from "@providers/ThemeProvider";
-import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (

@@ -1,5 +1,6 @@
-import { BoxFlexibleProps, BoxSpacingProps } from "@components/atoms/Box";
 import styled from "basic-styled";
+
+import { BoxFlexibleProps, BoxSpacingProps } from "@components/atoms/Box";
 
 import type { TypographyProps } from "./Typography";
 

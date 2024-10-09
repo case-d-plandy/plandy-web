@@ -1,9 +1,11 @@
-import * as Svgs from "@assets/icons";
-import type { BasicTheme } from "basic-styled";
-import type { Properties } from "csstype";
 import { Children, isValidElement, ReactNode, SVGProps } from "react";
 
+import * as Svgs from "@assets/icons";
+
 import { StyledIcon } from "./Icon.styles";
+
+import type { BasicTheme } from "basic-styled";
+import type { Properties } from "csstype";
 
 export interface IconProps extends SVGProps<SVGElement> {
   name: keyof typeof Svgs;

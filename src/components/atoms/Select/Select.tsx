@@ -11,8 +11,9 @@ import {
   useState
 } from "react";
 
-import type { OptionProps } from "./Option";
 import { EndIcon, OptionBox, SelectInner, StyledSelect, Wrapper } from "./Select.styles";
+
+import type { OptionProps } from "./Option";
 
 export interface SelectProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "onChange"> {
