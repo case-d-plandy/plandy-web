@@ -3,6 +3,7 @@ import Container from "@components/atoms/Container";
 import Icon from "@components/atoms/Icon";
 import Select, { Option } from "@components/atoms/Select";
 import useThemeStore from "@stores/theme";
+import { GoogleAnalytics } from "@utils/google-analytics.ts";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -18,15 +19,22 @@ function Header() {
   const handleClick = () => {
     updateTrigger("manual");
     updateMode(mode === "dark" ? "light" : "dark");
+    handleLogEvent("theme");
   };
 
   const handleChange = (newValue?: string) => setLanguage(newValue || "english");
+
+  const handleLogEvent = (label: string) => {
+    GoogleAnalytics.logEvent("click_top_nav", {
+      item_name: label
+    });
+  };
 
   return (
     <StyledHeader id="header">
       <Container>
         <HeaderInner>
-          <Link to="/">
+          <Link to="/" onClick={() => handleLogEvent("logo")}>
             <Button variant="text" size="small">
               <Logo>
                 <img width={30} height={30} src="/icons/apple-icon.png" alt="Plandy Logo" />
@@ -34,12 +42,12 @@ function Header() {
             </Button>
           </Link>
           <Adornment>
-            <Link to="/faq">
+            <Link to="/faq" onClick={() => handleLogEvent("faq")}>
               <Button variant="text" size="small">
                 FAQ
               </Button>
             </Link>
-            <Link to="/guide">
+            <Link to="/guide" onClick={() => handleLogEvent("guide")}>
               <Button variant="text" size="small">
                 Guide
               </Button>

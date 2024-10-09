@@ -35,6 +35,10 @@ export default defineConfig({
       {
         find: `@theme`,
         replacement: path.resolve(__dirname, "src/theme")
+      },
+      {
+        find: `@utils`,
+        replacement: path.resolve(__dirname, "src/utils")
       }
     ]
   }

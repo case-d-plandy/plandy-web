@@ -6,9 +6,15 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
+import { GoogleAnalytics } from "@utils/google-analytics.ts";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function TermsPage() {
+  useEffect(() => {
+    GoogleAnalytics.pageView("Terms of service");
+  }, []);
+
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
       <Typography variant="headline" fontWeight={700} mt={2} mb={2}>
