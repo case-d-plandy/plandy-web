@@ -1,8 +1,11 @@
-import ThemeProvider from "@providers/ThemeProvider.tsx";
+import { HelmetProvider } from "react-helmet-async";
+
+import { MemoryRouter, type MemoryRouterProps } from "react-router-dom";
+
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
-import { HelmetProvider } from "react-helmet-async";
-import { MemoryRouter, type MemoryRouterProps } from "react-router-dom";
+
+import ThemeProvider from "@providers/ThemeProvider";
 
 import App from "./App";
 

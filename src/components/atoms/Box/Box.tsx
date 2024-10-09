@@ -1,7 +1,8 @@
-import type { Properties } from "csstype";
 import { HTMLAttributes } from "react";
 
 import { StyledBox } from "./Box.styles";
+
+import type { Properties } from "csstype";
 
 export type BoxFlexibleProps = Pick<
   Properties,

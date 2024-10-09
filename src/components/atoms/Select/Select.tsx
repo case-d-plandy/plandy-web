@@ -1,4 +1,3 @@
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
 import {
   ButtonHTMLAttributes,
   Children,
@@ -12,8 +11,11 @@ import {
   useState
 } from "react";
 
-import type { OptionProps } from "./Option";
+import { GoogleAnalytics } from "@utils/google-analytics";
+
 import { EndIcon, OptionBox, SelectInner, StyledSelect, Wrapper } from "./Select.styles";
+
+import type { OptionProps } from "./Option";
 
 export interface SelectProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "onChange"> {

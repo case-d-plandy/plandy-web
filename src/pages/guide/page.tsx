@@ -1,10 +1,11 @@
+import { useEffect } from "react";
+
 import Typography from "@components/atoms/Typography";
 import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import Header from "@components/molecules/Header";
 import GuideList from "@pages/guide/_components/GuideList";
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
-import { useEffect } from "react";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 function GuidePage() {
   useEffect(() => {

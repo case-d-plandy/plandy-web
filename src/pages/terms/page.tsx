@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+
+import { Link } from "react-router-dom";
+
 import Box from "@components/atoms/Box";
 import Button from "@components/atoms/Button";
 import Icon from "@components/atoms/Icon";
@@ -6,9 +10,7 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 function TermsPage() {
   useEffect(() => {

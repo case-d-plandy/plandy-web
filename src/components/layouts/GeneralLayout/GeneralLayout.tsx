@@ -1,5 +1,6 @@
-import Container from "@components/atoms/Container";
 import { PropsWithChildren, ReactNode } from "react";
+
+import Container from "@components/atoms/Container";
 
 import { Main, StyledGeneralLayout } from "./GeneralLayout.styles";
 
