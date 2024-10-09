@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+/// <reference types="vitest/globals" />
 
 import "basic-styled";
 
@@ -29,3 +30,5 @@ declare module "basic-styled" {
     breakpoints: typeof breakpoints;
   }
 }
+
+declare module "jsdom";

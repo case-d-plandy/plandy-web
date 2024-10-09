@@ -13,14 +13,14 @@ function Header() {
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
   const updateMode = useThemeStore((state) => state.updateMode);
 
-  const [value, setValue] = useState("english");
+  const [language, setLanguage] = useState("english");
 
   const handleClick = () => {
     updateTrigger("manual");
     updateMode(mode === "dark" ? "light" : "dark");
   };
 
-  const handleChange = (newValue?: string) => setValue(newValue || "english");
+  const handleChange = (newValue?: string) => setLanguage(newValue || "english");
 
   return (
     <StyledHeader id="header">
@@ -45,15 +45,26 @@ function Header() {
               </Button>
             </Link>
             <Select
+              data-testid="language-button"
+              aria-label={language}
               size="small"
               onChange={handleChange}
-              value={value}
+              value={language}
               endIcon={<Icon name="ArrowDownBold" width={14} height={14} />}
             >
-              <Option value="korea">한국어</Option>
-              <Option value="english">English</Option>
+              <Option data-testid="language-option-korea" value="korea">
+                한국어
+              </Option>
+              <Option data-testid="language-option-english" value="english">
+                English
+              </Option>
             </Select>
-            <Button variant="text" onClick={handleClick}>
+            <Button
+              data-testid="theme-button"
+              aria-label={mode}
+              variant="text"
+              onClick={handleClick}
+            >
               {mode === "dark" ? (
                 <Icon name="SunBold" width={18} height={18} />
               ) : (
