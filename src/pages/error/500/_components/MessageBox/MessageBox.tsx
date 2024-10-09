@@ -9,12 +9,12 @@ import { StyledMessageBox } from "./MessageBox.styles";
 function MessageBox() {
   return (
     <StyledMessageBox>
-      <Icon name={"WarningBold"} width={100} height={100} />
-      <Typography variant={"headline"} fontWeight={700}>
+      <Icon name="WarningBold" width={100} height={100} />
+      <Typography variant="headline" fontWeight={700}>
         Something went wrong
       </Typography>
-      <Link to={"/"}>
-        <Button variant={"text"} startIcon={<Icon name={"HomeBold"} />}>
+      <Link to="/">
+        <Button variant="text" startIcon={<Icon name="HomeBold" />}>
           Go home
         </Button>
       </Link>

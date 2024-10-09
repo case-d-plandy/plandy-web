@@ -11,6 +11,8 @@ import {
   useState
 } from "react";
 
+import { GoogleAnalytics } from "@utils/google-analytics.ts";
+
 import { EndIcon, OptionBox, SelectInner, StyledSelect, Wrapper } from "./Select.styles";
 
 import type { OptionProps } from "./Option";
@@ -43,6 +45,12 @@ function Select({
     (optionValue?: string, childOnClick?: MouseEventHandler) => (e: MouseEvent<HTMLDivElement>) => {
       setIsOpen(false);
 
+      if (optionValue) {
+        GoogleAnalytics.logEvent("select_language_option", {
+          selected_item: optionValue
+        });
+      }
+
       if (typeof onChange === "function") {
         onChange(optionValue);
       }
@@ -65,7 +73,15 @@ function Select({
   })?.filter(Boolean);
   const selectedOption = options?.find((option) => option?.props?.selected);
 
-  const handleClick = () => setIsOpen((prevState) => !prevState);
+  const handleClick = () => {
+    if (isOpen) {
+      GoogleAnalytics.logEvent("click_top_nav", {
+        item_name: "language"
+      });
+    }
+
+    setIsOpen((prevState) => !prevState);
+  };
 
   const handleClickStopPropagation = (e: MouseEvent<HTMLDivElement>) => e.stopPropagation();
 

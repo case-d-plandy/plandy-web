@@ -63,8 +63,8 @@ function HashBlock({ children, title, description, to }: PropsWithChildren<HashB
             {to && isHover && (
               <HashTag>
                 <Link to={to || "#"}>
-                  <Button variant={"text"} onClick={handleClick}>
-                    <Icon name={"HashTagBold"} width={30} height={30} />
+                  <Button variant="text" onClick={handleClick}>
+                    <Icon name="HashTagBold" width={30} height={30} />
                   </Button>
                 </Link>
               </HashTag>
@@ -73,7 +73,7 @@ function HashBlock({ children, title, description, to }: PropsWithChildren<HashB
           <Divider />
         </TitleWrapper>
       )}
-      <Typography display={"flex"} flexDirection={"column"} gap={2} pt={2} pb={2}>
+      <Typography display="flex" flexDirection="column" gap={2} pt={2} pb={2}>
         {description}
         {children}
       </Typography>
