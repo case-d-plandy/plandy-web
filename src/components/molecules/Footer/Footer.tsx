@@ -12,13 +12,13 @@ function Footer() {
         <InfoBox>
           <Copyright>Copyright © {new Date().getFullYear()} Plandy</Copyright>
           <PolicyButtonGroup>
-            <Link to={"/terms"}>
-              <Button variant={"text"} size={"small"}>
+            <Link to="/terms">
+              <Button variant="text" size="small">
                 Terms of service
               </Button>
             </Link>
-            <Link to={"/privacy"}>
-              <Button variant={"text"} size={"small"}>
+            <Link to="/privacy">
+              <Button variant="text" size="small">
                 Privacy policy
               </Button>
             </Link>

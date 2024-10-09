@@ -13,51 +13,62 @@ function Header() {
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
   const updateMode = useThemeStore((state) => state.updateMode);
 
-  const [value, setValue] = useState("english");
+  const [language, setLanguage] = useState("english");
 
   const handleClick = () => {
     updateTrigger("manual");
     updateMode(mode === "dark" ? "light" : "dark");
   };
 
-  const handleChange = (newValue?: string) => setValue(newValue || "english");
+  const handleChange = (newValue?: string) => setLanguage(newValue || "english");
 
   return (
-    <StyledHeader id={"header"}>
+    <StyledHeader id="header">
       <Container>
         <HeaderInner>
-          <Link to={"/"}>
-            <Button variant={"text"} size={"small"}>
+          <Link to="/">
+            <Button variant="text" size="small">
               <Logo>
-                <img width={30} height={30} src={"/icons/apple-icon.png"} alt={"Plandy Logo"} />
+                <img width={30} height={30} src="/icons/apple-icon.png" alt="Plandy Logo" />
               </Logo>
             </Button>
           </Link>
           <Adornment>
-            <Link to={"/faq"}>
-              <Button variant={"text"} size={"small"}>
+            <Link to="/faq">
+              <Button variant="text" size="small">
                 FAQ
               </Button>
             </Link>
-            <Link to={"/guide"}>
-              <Button variant={"text"} size={"small"}>
+            <Link to="/guide">
+              <Button variant="text" size="small">
                 Guide
               </Button>
             </Link>
             <Select
-              size={"small"}
+              data-testid="language-button"
+              aria-label={language}
+              size="small"
               onChange={handleChange}
-              value={value}
-              endIcon={<Icon name={"ArrowDownBold"} width={14} height={14} />}
+              value={language}
+              endIcon={<Icon name="ArrowDownBold" width={14} height={14} />}
             >
-              <Option value={"korea"}>한국어</Option>
-              <Option value={"english"}>English</Option>
+              <Option data-testid="language-option-korea" value="korea">
+                한국어
+              </Option>
+              <Option data-testid="language-option-english" value="english">
+                English
+              </Option>
             </Select>
-            <Button variant={"text"} onClick={handleClick}>
+            <Button
+              data-testid="theme-button"
+              aria-label={mode}
+              variant="text"
+              onClick={handleClick}
+            >
               {mode === "dark" ? (
-                <Icon name={"SunBold"} width={18} height={18} />
+                <Icon name="SunBold" width={18} height={18} />
               ) : (
-                <Icon name={"MoonBold"} width={18} height={18} />
+                <Icon name="MoonBold" width={18} height={18} />
               )}
             </Button>
           </Adornment>

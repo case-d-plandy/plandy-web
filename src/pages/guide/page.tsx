@@ -7,7 +7,7 @@ import GuideList from "@pages/guide/_components/GuideList";
 function GuidePage() {
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
-      <Typography variant={"headline"} fontWeight={700} mt={2} mb={2}>
+      <Typography variant="headline" fontWeight={700} mt={2} mb={2}>
         User Guide
       </Typography>
       <GuideList />
