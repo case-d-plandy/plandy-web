@@ -1,6 +1,6 @@
-# robots.txt for https://planmate.info/
+# robots.txt for https://plandy.case-d.com/
 
 User-agent: *
 Allow: /
 
-Sitemap: https://www.planmate.info/sitemap.xml
+Sitemap: https://www.plandy.case-d.com/sitemap.xml
