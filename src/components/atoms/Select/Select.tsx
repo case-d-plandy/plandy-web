@@ -11,7 +11,7 @@ import {
   useState
 } from "react";
 
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 import { EndIcon, OptionBox, SelectInner, StyledSelect, Wrapper } from "./Select.styles";
 

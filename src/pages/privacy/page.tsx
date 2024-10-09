@@ -10,7 +10,7 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 function PrivacyPage() {
   useEffect(() => {

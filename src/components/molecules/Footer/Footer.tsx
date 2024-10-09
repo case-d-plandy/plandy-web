@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Button from "@components/atoms/Button";
 import Container from "@components/atoms/Container";
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 import { Copyright, Divider, InfoBox, PolicyButtonGroup, StyledFooter } from "./Footer.styles";
 

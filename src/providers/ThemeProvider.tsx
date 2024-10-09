@@ -9,9 +9,9 @@ import ResetStyle from "basic-styled/setup/ResetStyle";
 import BasicThemeProvider from "basic-styled/setup/ThemeProvider";
 
 import GlobalStyle from "@components/utils/GlobalStyle";
-import useThemeStore from "@stores/theme.ts";
+import useThemeStore from "@stores/theme";
 
-import dark from "@theme/dark.ts";
+import dark from "@theme/dark";
 import light from "@theme/light";
 
 createBuilder({

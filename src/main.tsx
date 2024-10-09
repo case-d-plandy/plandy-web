@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import ThemeProvider from "@providers/ThemeProvider";
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 import App from "./App";
 

@@ -7,7 +7,7 @@ import Container from "@components/atoms/Container";
 import Icon from "@components/atoms/Icon";
 import Select, { Option } from "@components/atoms/Select";
 import useThemeStore from "@stores/theme";
-import { GoogleAnalytics } from "@utils/google-analytics.ts";
+import { GoogleAnalytics } from "@utils/google-analytics";
 
 import { Adornment, HeaderInner, Logo, StyledHeader } from "./Header.styles";
 
