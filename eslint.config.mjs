@@ -1,17 +1,18 @@
+import path from "path";
+
 import pluginJs from "@eslint/js";
 import pluginImport from "eslint-plugin-import";
 import pluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import pluginReact from "eslint-plugin-react";
-import pluginSimpleImportSort from "eslint-plugin-simple-import-sort";
 import pluginVitest from "eslint-plugin-vitest";
 import globals from "globals";
-import path from "path";
 import tseslint from "typescript-eslint";
+
 const __dirname = path.resolve();
 
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,cjs,ts,mts,jsx,tsx}"],
     ignores: ["dist/**/*", "node_modules/**/*"]
   },
   {
@@ -27,18 +28,13 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  pluginImport.flatConfigs.recommended,
   pluginReact.configs.flat.recommended,
   pluginPrettierRecommended,
   pluginVitest.configs.recommended,
   {
-    plugins: {
-      "simple-import-sort": pluginSimpleImportSort,
-      import: pluginImport
-    },
     rules: {
       "no-console": "error",
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
       "no-restricted-imports": [
         "error",
         {
@@ -50,11 +46,31 @@ export default [
           ]
         }
       ],
+      "import/order": [
+        "error",
+        {
+          groups: ["builtin", "external", "internal", ["parent", "sibling", "index"], "type"],
+          pathGroups: [
+            {
+              pattern: "react*",
+              group: "builtin",
+              position: "before"
+            }
+          ],
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true
+          },
+          pathGroupsExcludedImportTypes: [],
+          "newlines-between": "always-and-inside-groups"
+        }
+      ],
       "import/extensions": [
         "error",
         "ignorePackages",
         {
           ts: "never",
+          mts: "never",
           tsx: "never"
         }
       ],
@@ -62,13 +78,11 @@ export default [
       "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never" }]
     },
     settings: {
-      "import/resolver": {
-        node: {
-          extensions: [".js", ".mjs", ".jsx", ".ts", ".mts", ".tsx"]
-        }
-      },
       react: {
         version: "detect"
+      },
+      "import/resolver": {
+        typescript: {}
       }
     }
   },

@@ -1,7 +1,9 @@
 import breakpoints from "@theme/breakpoints";
+
 import grey from "@theme/colors/grey";
 import spacing from "@theme/spacing";
 import typography from "@theme/typography";
+
 import type { BasicTheme } from "basic-styled";
 
 const dark: BasicTheme = {

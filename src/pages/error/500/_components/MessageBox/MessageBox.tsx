@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+
 import Button from "@components/atoms/Button";
 import Icon from "@components/atoms/Icon";
 import Typography from "@components/atoms/Typography";
-import { Link } from "react-router-dom";
 
 import { StyledMessageBox } from "./MessageBox.styles";
 

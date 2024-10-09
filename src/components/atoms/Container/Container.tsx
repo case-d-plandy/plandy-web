@@ -1,7 +1,8 @@
-import type { BasicTheme } from "basic-styled";
 import { PropsWithChildren } from "react";
 
 import { StyledContainer } from "./Container.styles";
+
+import type { BasicTheme } from "basic-styled";
 
 export interface ContainerProps {
   maxWidth?: keyof BasicTheme["breakpoints"];

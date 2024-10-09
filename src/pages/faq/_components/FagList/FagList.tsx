@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+
 import Button from "@components/atoms/Button";
 import Icon from "@components/atoms/Icon";
-import { Link } from "react-router-dom";
 
 import { FagListItem, StyledFagList } from "./FagList.styles";
 

@@ -1,3 +1,5 @@
+import { Route, Routes } from "react-router-dom";
+
 import ErrorBoundary from "@components/utils/ErrorBoundary";
 import Error404Page from "@pages/error/404/page";
 import Error500Page from "@pages/error/500/page";
@@ -8,7 +10,6 @@ import GuidePage from "@pages/guide/page";
 import HomePage from "@pages/page";
 import PrivacyPage from "@pages/privacy/page";
 import TermsPage from "@pages/terms/page";
-import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (

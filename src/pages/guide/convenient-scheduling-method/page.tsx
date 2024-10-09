@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Box from "@components/atoms/Box";
 import Button from "@components/atoms/Button";
 import Icon from "@components/atoms/Icon";
@@ -6,7 +8,6 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
-import { Link } from "react-router-dom";
 
 function ConvenientSchedulingMethodPage() {
   return (
