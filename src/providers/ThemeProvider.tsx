@@ -3,9 +3,7 @@ import { PropsWithChildren, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 import createBuilder from "basic-styled/setup/createBuilder";
-
 import ResetStyle from "basic-styled/setup/ResetStyle";
-
 import BasicThemeProvider from "basic-styled/setup/ThemeProvider";
 
 import GlobalStyle from "@components/utils/GlobalStyle";

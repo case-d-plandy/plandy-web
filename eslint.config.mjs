@@ -12,8 +12,7 @@ const __dirname = path.resolve();
 
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,jsx,tsx}"],
-    ignores: ["dist/**/*", "node_modules/**/*"]
+    files: ["**/*.{js,mjs,cjs,ts,mts,jsx,tsx}"]
   },
   {
     languageOptions: {
@@ -28,6 +27,9 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  {
+    ignores: ["dist"]
+  },
   pluginImport.flatConfigs.recommended,
   pluginReact.configs.flat.recommended,
   pluginPrettierRecommended,
