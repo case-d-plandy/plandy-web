@@ -5,6 +5,7 @@ export const StyledIntro = styled.section`
   justify-content: space-between;
   align-items: center;
   gap: ${({ theme: { spacing } }) => `${spacing(4)}px`};
+  font-family: "Paperlogy";
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
     flex-direction: column;

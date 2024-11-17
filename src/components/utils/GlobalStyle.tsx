@@ -5,6 +5,27 @@ function GlobalStyle() {
 }
 
 const StyledGlobal = styled.style`
+  @font-face {
+    font-family: "Paperlogy";
+    font-weight: 800;
+    src: url("/fonts/Paperlogy-8ExtraBold.woff2") format("woff");
+  }
+  @font-face {
+    font-family: "Paperlogy";
+    font-weight: 700;
+    src: url("/fonts/Paperlogy-7Bold.woff2") format("woff");
+  }
+  @font-face {
+    font-family: "Paperlogy";
+    font-weight: 500;
+    src: url("/fonts/Paperlogy-5Medium.woff2") format("woff");
+  }
+  @font-face {
+    font-family: "Paperlogy";
+    font-weight: 400;
+    src: url("/fonts/Paperlogy-4Regular.woff2") format("woff");
+  }
+
   html,
   body {
     height: 100%;
@@ -20,6 +41,7 @@ const StyledGlobal = styled.style`
       }
     }) => mainText};
   }
+
   #root {
     display: flex;
     flex-direction: column;

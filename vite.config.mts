@@ -11,6 +11,7 @@ export default defineConfig({
       include: "**/*.svg"
     })
   ],
+  assetsInclude: ["**/*.woff2"],
   resolve: {
     alias: [
       {
