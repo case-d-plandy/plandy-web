@@ -183,7 +183,7 @@ function PrivacyPage() {
         </HashBlock>
         <HashBlock
           title="Contact"
-          description="For opinions, questions, complaints, or other inquiries regarding the handling of user information related to the privacy policy of the Service, please contact us using the email(plandy.official@gmail.com)."
+          description="For opinions, questions, complaints, or other inquiries regarding the handling of user information related to the privacy policy of the Service, please contact us using the email(support@case-d.com)."
           to="/privacy#contact"
         />
       </Box>
