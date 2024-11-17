@@ -10,6 +10,7 @@
     "prettier": "prettier --write --config ./.prettierrc \"**/*.{js,mjs,ts,mts,jsx,tsx,json}\"",
     "convention": "bun prettier && eslint --fix \"**/*.{js,mjs,ts,mts,jsx,tsx,html}\"",
     "prepare": "husky",
+    "postinstall": "husky install",
     "test": "vitest run"
   },
   "dependencies": {
@@ -53,6 +54,7 @@
   },
   "lint-staged": {
     "*.{js,mjs,ts,mts,jsx,tsx,json}": "prettier --write",
-    "*.{js,mjs,ts,mts,jsx,tsx,html}": "eslint --fix"
+    "*.{js,mjs,ts,mts,jsx,tsx,html}": "eslint --fix",
+    "*.{test,spec}.*": "vitest run"
   }
 }

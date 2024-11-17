@@ -147,7 +147,7 @@ function TermsPage() {
         />
         <HashBlock
           title="Contact"
-          description="If you have any comments, questions, complaints, or other inquiries regarding the handling of user information regarding the terms of use of this service, please contact us using the email(plandy.official@gmail.com)."
+          description="If you have any comments, questions, complaints, or other inquiries regarding the handling of user information regarding the terms of use of this service, please contact us using the email(support@case-d.com)."
           to="/terms#contact"
         />
       </Box>
