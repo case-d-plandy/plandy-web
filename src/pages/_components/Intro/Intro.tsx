@@ -12,7 +12,13 @@ function Intro() {
         <Title>Plandy</Title>
         <SubTitle>Simple schedule planner with Apple CloudKit</SubTitle>
         <Box mt={2}>
-          <Button variant="text" startIcon={<Icon name="ImportBold" />}>
+          <Button
+            variant="text"
+            startIcon={<Icon name="ImportBold" />}
+            onClick={() =>
+              window.open("https://apps.apple.com/us/app/plandy-reminders-calendar/id6736831438")
+            }
+          >
             <Typography>Download On the</Typography>
             <Typography variant="title" fontWeight={700}>
               App store
