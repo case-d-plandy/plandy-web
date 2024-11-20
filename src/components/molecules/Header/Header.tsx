@@ -9,6 +9,8 @@ import Select, { Option } from "@components/atoms/Select";
 import useThemeStore from "@stores/theme";
 import { GoogleAnalytics } from "@utils/google-analytics";
 
+import i18n from "@utils/i18n";
+
 import { Adornment, HeaderInner, Logo, StyledHeader } from "./Header.styles";
 
 function Header() {
@@ -16,7 +18,7 @@ function Header() {
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
   const updateMode = useThemeStore((state) => state.updateMode);
 
-  const [language, setLanguage] = useState("english");
+  const [language, setLanguage] = useState(i18n.language);
 
   const handleClick = () => {
     updateTrigger("manual");
@@ -24,7 +26,10 @@ function Header() {
     handleLogEvent("theme");
   };
 
-  const handleChange = (newValue?: string) => setLanguage(newValue || "english");
+  const handleChangeLang = (newLang?: string) => {
+    i18n.changeLanguage(newLang);
+    setLanguage(newLang || "en");
+  };
 
   const handleLogEvent = (label: string) => {
     GoogleAnalytics.logEvent("click_top_nav", {
@@ -58,15 +63,18 @@ function Header() {
               data-testid="language-button"
               aria-label={language}
               size="small"
-              onChange={handleChange}
+              onChange={handleChangeLang}
               value={language}
               endIcon={<Icon name="ArrowDownBold" width={14} height={14} />}
             >
-              <Option data-testid="language-option-korea" value="korea">
+              <Option data-testid="language-option-english" value="en">
+                English
+              </Option>
+              <Option data-testid="language-option-korea" value="ko">
                 한국어
               </Option>
-              <Option data-testid="language-option-english" value="english">
-                English
+              <Option data-testid="language-option-japanese" value="ja">
+                日本語
               </Option>
             </Select>
             <Button

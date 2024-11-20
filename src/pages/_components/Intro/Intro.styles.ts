@@ -5,9 +5,11 @@ export const StyledIntro = styled.section`
   justify-content: space-between;
   align-items: center;
   gap: ${({ theme: { spacing } }) => `${spacing(4)}px`};
+  font-family: "Paperlogy";
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
     flex-direction: column;
+    margin: 0 -24px;
   }
 `;
 
@@ -23,6 +25,8 @@ export const TitleBox = styled.div`
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
     padding: 0;
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -42,7 +46,8 @@ export const Title = styled.h1`
   }) => ({
     fontSize: display.large.size,
     fontWeight: 700,
-    letterSpacing: display.large.letterSpacing
+    letterSpacing: display.large.letterSpacing,
+    lineHeight: "70px"
   })};
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
@@ -64,9 +69,9 @@ export const SubTitle = styled.h2`
       typography: { headline }
     }
   }) => ({
-    fontSize: headline.large.size,
+    fontSize: headline.small.size,
     fontWeight: 500,
-    letterSpacing: headline.large.letterSpacing
+    letterSpacing: headline.small.letterSpacing
   })};
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
@@ -83,9 +88,27 @@ export const SubTitle = styled.h2`
 `;
 
 export const ImageBox = styled.div`
-  text-align: center;
+  text-align: right;
   flex-grow: 1;
-  padding: ${({ theme: { spacing } }) => `${spacing(20)}px ${spacing(10)}px`};
-  border: 1px solid ${({ theme: { palette } }) => palette.box.border};
-  border-radius: ${({ theme: { spacing } }) => `${spacing(1)}px`};
+  padding: ${({ theme: { spacing } }) => `${spacing(10)}px 0 ${spacing(10)}px ${spacing(8)}px`};
+  background-color: ${({ theme: { palette } }) => palette.grey["100"]};
+  border-radius: ${({ theme: { spacing } }) => `${spacing(4)}px`};
+  overflow: hidden;
+
+  & > img {
+    max-width: 750px;
+    width: 100%;
+    max-height: 574px;
+    height: auto;
+
+    @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+      width: 120%;
+    }
+  }
+
+  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+    text-align: center;
+    padding: 0;
+    border-radius: 0;
+  }
 `;
