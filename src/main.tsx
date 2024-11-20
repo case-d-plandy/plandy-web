@@ -1,10 +1,12 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
+import "@utils/i18n";
 
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
+import Loading from "@components/utils/Loading";
 import ThemeProvider from "@providers/ThemeProvider";
 import { GoogleAnalytics } from "@utils/google-analytics";
 
@@ -12,14 +14,16 @@ import App from "./App";
 
 GoogleAnalytics.initialize();
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <HelmetProvider>
-      <ThemeProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
-    </HelmetProvider>
+    <Suspense fallback={<Loading />}>
+      <HelmetProvider>
+        <ThemeProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </HelmetProvider>
+    </Suspense>
   </StrictMode>
 );

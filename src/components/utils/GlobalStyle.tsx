@@ -47,6 +47,30 @@ const StyledGlobal = styled.style`
     flex-direction: column;
     min-height: 100%;
   }
+
+  @-webkit-keyframes bounceDelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes bounceDelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
 `;
 
 export default GlobalStyle;
