@@ -13,6 +13,21 @@ import i18n from "@utils/i18n";
 
 import { Adornment, HeaderInner, Logo, StyledHeader } from "./Header.styles";
 
+const Language = {
+  en: {
+    name: "English",
+    value: "english"
+  },
+  ko: {
+    name: "한국어",
+    value: "korean"
+  },
+  ja: {
+    name: "日本語",
+    value: "japanese"
+  }
+};
+
 function Header() {
   const mode = useThemeStore((state) => state.mode);
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
@@ -66,16 +81,17 @@ function Header() {
               onChange={handleChangeLang}
               value={language}
               endIcon={<Icon name="ArrowDownBold" width={14} height={14} />}
+              placeholder="Language"
             >
-              <Option data-testid="language-option-english" value="en">
-                English
-              </Option>
-              <Option data-testid="language-option-korea" value="ko">
-                한국어
-              </Option>
-              <Option data-testid="language-option-japanese" value="ja">
-                日本語
-              </Option>
+              {Object.entries(Language).map(([key, { name, value }]) => (
+                <Option
+                  key={`language-option-${value}`}
+                  data-testid={`language-option-${value}`}
+                  value={key}
+                >
+                  {name}
+                </Option>
+              ))}
             </Select>
             <Button
               data-testid="theme-button"
