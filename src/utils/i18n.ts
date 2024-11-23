@@ -4,9 +4,9 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 
-import translationEN from "../../public/locales/en/translation.json";
-import translationJA from "../../public/locales/ja/translation.json";
-import translationKO from "../../public/locales/ko/translation.json";
+import translationEN from "@assets/locales/en/translation.json";
+import translationJA from "@assets/locales/ja/translation.json";
+import translationKO from "@assets/locales/ko/translation.json";
 
 export const resources = {
   en: {
