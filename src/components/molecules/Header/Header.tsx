@@ -75,6 +75,7 @@ function Header() {
               </Button>
             </Link>
             <Select
+              id="language-button"
               data-testid="language-button"
               aria-label={language}
               size="small"

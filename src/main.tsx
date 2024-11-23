@@ -16,14 +16,14 @@ GoogleFirebase.initialize();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Suspense fallback={<Loading />}>
-      <HelmetProvider>
-        <ThemeProvider>
-          <BrowserRouter>
+    <HelmetProvider>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
             <App />
-          </BrowserRouter>
-        </ThemeProvider>
-      </HelmetProvider>
-    </Suspense>
+          </Suspense>
+        </BrowserRouter>
+      </ThemeProvider>
+    </HelmetProvider>
   </StrictMode>
 );

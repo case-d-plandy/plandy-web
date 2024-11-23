@@ -27,4 +27,8 @@ export const Adornment = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme: { spacing } }) => `${spacing(1)}px`};
+
+  & #language-button {
+    min-width: 77px;
+  }
 `;

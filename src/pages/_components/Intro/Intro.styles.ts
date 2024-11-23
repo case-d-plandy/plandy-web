@@ -4,7 +4,7 @@ export const StyledIntro = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: ${({ theme: { spacing } }) => `${spacing(4)}px`};
+  gap: ${({ theme: { spacing } }) => `${spacing(6)}px`};
   font-family: "Paperlogy";
 
   @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
@@ -16,6 +16,7 @@ export const StyledIntro = styled.section`
 export const TitleBox = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 370px;
   gap: ${({ theme: { spacing } }) => `${spacing(1)}px`};
   padding: ${({ theme: { spacing } }) => `${spacing(20)}px 0px`};
 
@@ -33,8 +34,8 @@ export const TitleBox = styled.div`
 export const Title = styled.h1`
   background: linear-gradient(
     90deg,
-    ${({ theme: { palette } }) => palette.secondary} 5%,
-    ${({ theme: { palette } }) => palette.primary} 90%
+    ${({ theme: { palette } }) => palette.primary} 5%,
+    ${({ theme: { palette } }) => palette.secondary} 90%
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -89,26 +90,33 @@ export const SubTitle = styled.h2`
 
 export const ImageBox = styled.div`
   text-align: right;
+  width: 100%;
   flex-grow: 1;
   padding: ${({ theme: { spacing } }) => `${spacing(10)}px 0 ${spacing(10)}px ${spacing(8)}px`};
   background-color: ${({ theme: { palette } }) => palette.grey["100"]};
   border-radius: ${({ theme: { spacing } }) => `${spacing(4)}px`};
   overflow: hidden;
 
+  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
+    text-align: center;
+    padding: 0;
+    border-radius: 0;
+  }
+`;
+
+export const ImageRatioBox = styled.div`
+  position: relative;
+  padding-top: calc(100% / 750 * 568);
+
   & > img {
-    max-width: 750px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-height: 574px;
     height: auto;
 
     @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
       width: 120%;
     }
-  }
-
-  @media (max-width: ${({ theme: { breakpoints } }) => `${breakpoints.sm}px`}) {
-    text-align: center;
-    padding: 0;
-    border-radius: 0;
   }
 `;
