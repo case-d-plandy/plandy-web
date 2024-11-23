@@ -5,11 +5,11 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import Header from "@components/molecules/Header";
 import FagList from "@pages/faq/_components/FagList";
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 function FaqPage() {
   useEffect(() => {
-    GoogleAnalytics.pageView("FAQ");
+    GoogleFirebase.pageView("FAQ");
   }, []);
 
   return (

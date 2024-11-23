@@ -5,11 +5,11 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import Header from "@components/molecules/Header";
 import GuideList from "@pages/guide/_components/GuideList";
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 function GuidePage() {
   useEffect(() => {
-    GoogleAnalytics.pageView("Guide");
+    GoogleFirebase.pageView("Guide");
   }, []);
 
   return (

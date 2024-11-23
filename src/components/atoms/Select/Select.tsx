@@ -11,7 +11,7 @@ import {
   useState
 } from "react";
 
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 import { EndIcon, OptionBox, SelectInner, StyledSelect, Wrapper } from "./Select.styles";
 
@@ -46,7 +46,7 @@ function Select({
       setIsOpen(false);
 
       if (optionValue) {
-        GoogleAnalytics.logEvent("select_language_option", {
+        GoogleFirebase.logEvent("select_language_option", {
           selected_item: optionValue
         });
       }
@@ -75,7 +75,7 @@ function Select({
 
   const handleClick = () => {
     if (isOpen) {
-      GoogleAnalytics.logEvent("click_top_nav", {
+      GoogleFirebase.logEvent("click_top_nav", {
         item_name: "language"
       });
     }
