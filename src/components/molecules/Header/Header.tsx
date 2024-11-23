@@ -7,7 +7,7 @@ import Container from "@components/atoms/Container";
 import Icon from "@components/atoms/Icon";
 import Select, { Option } from "@components/atoms/Select";
 import useThemeStore from "@stores/theme";
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 import i18n from "@utils/i18n";
 
@@ -47,7 +47,7 @@ function Header() {
   };
 
   const handleLogEvent = (label: string) => {
-    GoogleAnalytics.logEvent("click_top_nav", {
+    GoogleFirebase.logEvent("click_top_nav", {
       item_name: label
     });
   };
@@ -75,6 +75,7 @@ function Header() {
               </Button>
             </Link>
             <Select
+              id="language-button"
               data-testid="language-button"
               aria-label={language}
               size="small"

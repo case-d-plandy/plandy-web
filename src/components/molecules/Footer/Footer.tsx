@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 import Button from "@components/atoms/Button";
 import Container from "@components/atoms/Container";
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 import { Copyright, Divider, InfoBox, PolicyButtonGroup, StyledFooter } from "./Footer.styles";
 
 function Footer() {
   const handleLogEvent = (label: string) => {
-    GoogleAnalytics.logEvent("click_top_nav", {
+    GoogleFirebase.logEvent("click_top_nav", {
       item_name: label
     });
   };

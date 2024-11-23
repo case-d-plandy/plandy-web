@@ -5,6 +5,7 @@ import {
   logEvent
 } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
+import { getPerformance } from "firebase/performance";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -18,10 +19,11 @@ const firebaseConfig = {
 
 let analytics: Analytics | undefined;
 
-export const GoogleAnalytics = {
+export const GoogleFirebase = {
   initialize() {
     const app = initializeApp(firebaseConfig);
     analytics = getAnalytics(app);
+    getPerformance(app);
   },
   pageView(title: string) {
     if (analytics === undefined) return;

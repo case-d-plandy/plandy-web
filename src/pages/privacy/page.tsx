@@ -10,11 +10,11 @@ import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 function PrivacyPage() {
   useEffect(() => {
-    GoogleAnalytics.pageView("Privacy policy");
+    GoogleFirebase.pageView("Privacy policy");
   }, []);
 
   return (

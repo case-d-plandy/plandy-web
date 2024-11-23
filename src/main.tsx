@@ -8,22 +8,22 @@ import { createRoot } from "react-dom/client";
 
 import Loading from "@components/utils/Loading";
 import ThemeProvider from "@providers/ThemeProvider";
-import { GoogleAnalytics } from "@utils/google-analytics";
+import { GoogleFirebase } from "@utils/google-firebase";
 
 import App from "./App";
 
-GoogleAnalytics.initialize();
+GoogleFirebase.initialize();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Suspense fallback={<Loading />}>
-      <HelmetProvider>
-        <ThemeProvider>
-          <BrowserRouter>
+    <HelmetProvider>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
             <App />
-          </BrowserRouter>
-        </ThemeProvider>
-      </HelmetProvider>
-    </Suspense>
+          </Suspense>
+        </BrowserRouter>
+      </ThemeProvider>
+    </HelmetProvider>
   </StrictMode>
 );
