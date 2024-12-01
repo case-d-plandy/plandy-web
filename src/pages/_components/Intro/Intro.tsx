@@ -45,8 +45,8 @@ function Intro() {
             width={750}
             height={568}
             src={
-              i18n.language.toString() in PlandyMockupImage
-                ? PlandyMockupImage[i18n.language.toString() as keyof typeof PlandyMockupImage]
+              i18n.language in PlandyMockupImage
+                ? PlandyMockupImage[i18n.language as keyof typeof PlandyMockupImage]
                 : PlandyMockupImage.en
             }
             alt="Plandy Mockup"
