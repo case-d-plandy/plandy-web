@@ -1,4 +1,11 @@
 {
   "title": "Plandy | Reminders & Calendar",
-  "intro_text": "Simple and easy task Manager"
+  "intro_text": "Simple and easy task Manager",
+  "faq": "FAQ",
+  "faq_apple_102543": "If your iCloud Contacts, Calendars, or Reminders won’t sync",
+  "faq_apple_105124": "Share and assign reminders on your iPhone or iPad",
+  "guide": "Guide",
+  "terms": "Terms of Use",
+  "privacy": "Privacy Policy",
+  "coming_soon": "Coming Soon"
 }

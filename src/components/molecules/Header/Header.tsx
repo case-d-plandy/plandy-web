@@ -1,6 +1,5 @@
-import { useState } from "react";
-
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import Button from "@components/atoms/Button";
 import Container from "@components/atoms/Container";
@@ -9,31 +8,21 @@ import Select, { Option } from "@components/atoms/Select";
 import useThemeStore from "@stores/theme";
 import { GoogleFirebase } from "@utils/google-firebase";
 
-import i18n from "@utils/i18n";
+import { matchSupportLanguage, SupportLanguage } from "@utils/i18n";
 
 import { Adornment, HeaderInner, Logo, StyledHeader } from "./Header.styles";
 
-const Language = {
-  en: {
-    name: "English",
-    value: "english"
-  },
-  ko: {
-    name: "한국어",
-    value: "korean"
-  },
-  ja: {
-    name: "日本語",
-    value: "japanese"
-  }
-};
-
 function Header() {
+  const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const { lang } = useParams();
+
   const mode = useThemeStore((state) => state.mode);
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
   const updateMode = useThemeStore((state) => state.updateMode);
 
-  const [language, setLanguage] = useState(i18n.language);
+  const prefixUrlLang = lang ? `/${lang}` : "";
 
   const handleClick = () => {
     updateTrigger("manual");
@@ -42,8 +31,7 @@ function Header() {
   };
 
   const handleChangeLang = (newLang?: string) => {
-    i18n.changeLanguage(newLang);
-    setLanguage(newLang || "en");
+    navigate(`/${newLang}${pathname.replace(prefixUrlLang, "")}`);
   };
 
   const handleLogEvent = (label: string) => {
@@ -56,7 +44,7 @@ function Header() {
     <StyledHeader id="header">
       <Container>
         <HeaderInner>
-          <Link to="/" onClick={() => handleLogEvent("logo")}>
+          <Link to={`${prefixUrlLang}/`} onClick={() => handleLogEvent("logo")}>
             <Button variant="text" size="small">
               <Logo>
                 <img width={30} height={30} src="/icons/apple-icon.png" alt="Plandy Logo" />
@@ -64,31 +52,31 @@ function Header() {
             </Button>
           </Link>
           <Adornment>
-            <Link to="/faq" onClick={() => handleLogEvent("faq")}>
+            <Link to={`${prefixUrlLang}/faq`} onClick={() => handleLogEvent("faq")}>
               <Button variant="text" size="small">
-                FAQ
+                {t("faq")}
               </Button>
             </Link>
-            <Link to="/guide" onClick={() => handleLogEvent("guide")}>
+            <Link to={`${prefixUrlLang}/guide`} onClick={() => handleLogEvent("guide")}>
               <Button variant="text" size="small">
-                Guide
+                {t("guide")}
               </Button>
             </Link>
             <Select
               id="language-button"
               data-testid="language-button"
-              aria-label={language}
+              aria-label={matchSupportLanguage(i18n.resolvedLanguage).name}
               size="small"
               onChange={handleChangeLang}
-              value={language}
+              value={i18n.resolvedLanguage}
               endIcon={<Icon name="ArrowDownBold" width={14} height={14} />}
               placeholder="Language"
             >
-              {Object.entries(Language).map(([key, { name, value }]) => (
+              {Object.values(SupportLanguage).map(({ name, value, langCode }) => (
                 <Option
                   key={`language-option-${value}`}
                   data-testid={`language-option-${value}`}
-                  value={key}
+                  value={langCode}
                 >
                   {name}
                 </Option>

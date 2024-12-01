@@ -14,13 +14,13 @@ import { GoogleFirebase } from "@utils/google-firebase";
 
 function TermsPage() {
   useEffect(() => {
-    GoogleFirebase.pageView("Terms of service");
+    GoogleFirebase.pageView("Terms of Use");
   }, []);
 
   return (
     <GeneralLayout header={<Header />} footer={<Footer />}>
       <Typography variant="headline" fontWeight={700} mt={2} mb={2}>
-        Terms of service
+        Terms of Use
       </Typography>
       <Typography>
         {`We will explain the "terms of use" (hereinafter referred to as the
