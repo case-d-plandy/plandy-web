@@ -14,7 +14,7 @@ import { GoogleFirebase } from "@utils/google-firebase";
 
 function PrivacyPage() {
   useEffect(() => {
-    GoogleFirebase.pageView("Privacy policy");
+    GoogleFirebase.pageView("Privacy Policy");
   }, []);
 
   return (

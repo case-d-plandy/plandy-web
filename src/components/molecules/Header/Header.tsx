@@ -13,7 +13,7 @@ import { matchSupportLanguage, SupportLanguage } from "@utils/i18n";
 import { Adornment, HeaderInner, Logo, StyledHeader } from "./Header.styles";
 
 function Header() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { lang } = useParams();
@@ -54,12 +54,12 @@ function Header() {
           <Adornment>
             <Link to={`${prefixUrlLang}/faq`} onClick={() => handleLogEvent("faq")}>
               <Button variant="text" size="small">
-                FAQ
+                {t("faq")}
               </Button>
             </Link>
             <Link to={`${prefixUrlLang}/guide`} onClick={() => handleLogEvent("guide")}>
               <Button variant="text" size="small">
-                Guide
+                {t("guide")}
               </Button>
             </Link>
             <Select

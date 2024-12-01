@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 
 import Button from "@components/atoms/Button";
@@ -7,6 +8,7 @@ import { GoogleFirebase } from "@utils/google-firebase";
 import { Copyright, Divider, InfoBox, PolicyButtonGroup, StyledFooter } from "./Footer.styles";
 
 function Footer() {
+  const { t } = useTranslation();
   const { lang } = useParams();
 
   const prefixUrlLang = lang ? `/${lang}` : "";
@@ -26,12 +28,12 @@ function Footer() {
           <PolicyButtonGroup>
             <Link to={`${prefixUrlLang}/terms`} onClick={() => handleLogEvent("terms")}>
               <Button variant="text" size="small">
-                Terms of service
+                {t("terms")}
               </Button>
             </Link>
             <Link to={`${prefixUrlLang}/privacy`} onClick={() => handleLogEvent("privacy")}>
               <Button variant="text" size="small">
-                Privacy policy
+                {t("privacy")}
               </Button>
             </Link>
           </PolicyButtonGroup>
