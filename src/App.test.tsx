@@ -2,7 +2,7 @@ import { HelmetProvider } from "react-helmet-async";
 
 import { MemoryRouter, type MemoryRouterProps } from "react-router-dom";
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 
 import ThemeProvider from "@providers/ThemeProvider";
@@ -30,15 +30,21 @@ describe("상단 네비게이션", () => {
     const languageButton = await screen.findByTestId("language-button");
     expect(languageButton).toBeInTheDocument();
     await userEvent.click(languageButton);
-    expect(await screen.findByTestId(/language-option-korea/)).toBeInTheDocument();
+    expect(await screen.findByTestId(/language-option-korean/)).toBeInTheDocument();
     expect(await screen.findByTestId(/language-option-english/)).toBeInTheDocument();
 
     if (languageButton.getAttribute("aria-label") === "한국어") {
       await userEvent.click(screen.getByTestId("language-option-english"));
-      expect(languageButton.getAttribute("aria-label")).equal("english");
+      await waitFor(async () => {
+        const languageButton = await screen.findByTestId("language-button");
+        expect(languageButton.getAttribute("aria-label")).equal("English");
+      });
     } else {
-      await userEvent.click(screen.getByTestId("language-option-korea"));
-      expect(languageButton.getAttribute("aria-label")).equal("korea");
+      await userEvent.click(screen.getByTestId("language-option-korean"));
+      await waitFor(async () => {
+        const languageButton = await screen.findByTestId("language-button");
+        expect(languageButton.getAttribute("aria-label")).equal("한국어");
+      });
     }
   });
 

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import ErrorBoundary from "@components/utils/ErrorBoundary";
+import LangLayout from "@components/utils/LangLayout";
 import Error404Page from "@pages/error/404/page";
 import Error500Page from "@pages/error/500/page";
 import HowToConnectPage from "@pages/faq/how-to-connect/page";
@@ -25,6 +26,13 @@ function App() {
         />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/:lang" element={<LangLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="faq" element={<FaqPage />} />
+          <Route path="guide" element={<GuidePage />} />
+          <Route path="terms" element={<TermsPage />} />
+          <Route path="privacy" element={<PrivacyPage />} />
+        </Route>
         <Route path="*" element={<Error404Page />} />
       </Routes>
     </ErrorBoundary>
