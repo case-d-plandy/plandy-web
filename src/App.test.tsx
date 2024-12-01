@@ -15,7 +15,7 @@ describe("상단 네비게이션", () => {
 
     await userEvent.click(screen.getByRole("button", { name: /FAQ/ }));
     expect(
-      await screen.findByText(/How to connect an external calendar（iCloud、Google、Outlook）/i)
+      await screen.findByText(/If your iCloud Contacts, Calendars, or Reminders won’t sync/i)
     ).toBeInTheDocument();
   });
 
