@@ -7,8 +7,8 @@ import Button from "@components/atoms/Button";
 import Icon from "@components/atoms/Icon";
 import Typography from "@components/atoms/Typography";
 import GeneralLayout from "@components/layouts/GeneralLayout";
+import Block from "@components/molecules/Block";
 import Footer from "@components/molecules/Footer";
-import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
 import { GoogleFirebase } from "@utils/google-firebase";
 
@@ -29,10 +29,9 @@ function PrivacyPage() {
         Information Collected by the Service
       </Typography>
       <Box display="flex" flexDirection="column" gap={3} mt={2}>
-        <HashBlock
+        <Block
           title="Reminder Information"
           description={`The Service collects reminder information from the device with the user's consent. The collected information is used within the device to provide the following features of the Service and is not stored on external servers managed by the Service Provider.`}
-          to="/privacy#reminder-information"
         >
           <ul>
             <li>Display and edit reminders</li>
@@ -52,11 +51,10 @@ function PrivacyPage() {
               iCloud Reminder Apple Privacy Policy(opens new window)
             </Button>
           </Link>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Calendar and Event Information"
           description={`The Service collects calendar information (event information) from the device with the user's consent. The collected information is used within the device to provide the following features of the Service and is not stored on external servers managed by the Service Provider.`}
-          to="/privacy#calendar-and-event-information"
         >
           <ul>
             <li>Display and edit calendars</li>
@@ -95,21 +93,19 @@ function PrivacyPage() {
               </Button>
             </Link>
           </Box>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Contact Information"
           description={`The Service collects contact information (thumbnail photos, display names) from the device with the user's consent. The collected information is used within the device to provide the following features of the Service and is not stored on external servers managed by the Service Provider.`}
-          to="/privacy#contact-information"
         >
           <ul>
             <li>Display thumbnail photos and display names of event attendees</li>
             <li>Display thumbnail photos for birthday events</li>
           </ul>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Feedback and Inquiry Information"
           description="When the user contacts the Service Provider for feedback or inquiries about the Service, the following information may be collected. The collected information is used to respond to inquiries and improve the Service."
-          to="/privacy#feedback-and-inquiry-information"
         >
           <ul>
             <li>Name</li>
@@ -117,11 +113,10 @@ function PrivacyPage() {
             <li>Inquiry details</li>
             <li>Screenshots and other images</li>
           </ul>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Usage Data"
           description="The Service collects the following usage data upon the commencement of Service use. The collected information is used to improve the Service."
-          to="/privacy#usage-data"
         >
           <ul>
             <li>
@@ -156,11 +151,10 @@ function PrivacyPage() {
               Google Calenda Google Privacy Policy(opens new window)
             </Button>
           </Link>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Information for Ad Delivery"
           description={`The Service collects advertising identifiers (IDFA) with the user's consent. The collected information is used for ad delivery.`}
-          to="/privacy#information-for-ad-delivery"
         >
           <div>
             The Service uses third-party advertising services. These advertising service providers
@@ -180,11 +174,10 @@ function PrivacyPage() {
             By using Plandy of the Paid subscription services, ad delivery will be stopped, and
             information for the purpose of ad delivery will no longer be collected.
           </div>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Contact"
           description="For opinions, questions, complaints, or other inquiries regarding the handling of user information related to the privacy policy of the Service, please contact us using the email(support@case-d.com)."
-          to="/privacy#contact"
         />
       </Box>
     </GeneralLayout>

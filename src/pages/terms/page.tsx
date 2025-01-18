@@ -7,8 +7,8 @@ import Button from "@components/atoms/Button";
 import Icon from "@components/atoms/Icon";
 import Typography from "@components/atoms/Typography";
 import GeneralLayout from "@components/layouts/GeneralLayout";
+import Block from "@components/molecules/Block";
 import Footer from "@components/molecules/Footer";
-import HashBlock from "@components/molecules/HashBlock";
 import Header from "@components/molecules/Header";
 import { GoogleFirebase } from "@utils/google-firebase";
 
@@ -29,15 +29,14 @@ function TermsPage() {
               "service provider").`}
       </Typography>
       <Box display="flex" flexDirection="column" gap={3} mt={4}>
-        <HashBlock
+        <Block
           title="General"
           description={
             "By using this service, you are deemed to have agreed to this agreement. Please be sure to\n" +
-            "          read these Terms before using this service."
+            "read these Terms before using this service."
           }
-          to="/terms#general"
         />
-        <HashBlock title="Disclaimer" to="/terms#disclaimer">
+        <Block title="Disclaimer">
           <ul>
             <li>
               {`Preparation of equipment and network environment to operate this application shall be
@@ -69,16 +68,14 @@ function TermsPage() {
               paid services
             </li>
           </ul>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Usage Fees"
           description="This application shall be basically free of charge."
-          to="/terms#usage-fees"
         />
-        <HashBlock
+        <Block
           title="Prohibited matter"
           description="When using this service, the user shall not perform the following acts."
-          to="/terms#prohibited-matter"
         >
           <ul>
             <li>Acts that violate copyrights, portrait rights, honor rights, privacy, etc.</li>
@@ -112,23 +109,21 @@ function TermsPage() {
             <li>Acts that impose a load more than necessary on the target equipment</li>
             <li>Other acts that the service provider deems inappropriate</li>
           </ul>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Change, Suspension, Termination of Service"
           description={
             "The service provider may change, suspend, or terminate part or all of the service at any\n" +
             "          time for any reason without prior notice to the user."
           }
-          to="/terms#change-suspension-termination-of-service"
         />
-        <HashBlock
+        <Block
           title="Privacy policy"
           description={
             "User privacy information and personal information will be handled appropriately in\n" +
             "          accordance with the privacy policy. By using this service, you agree to our privacy\n" +
             "          policy."
           }
-          to="/terms#privacy-policy"
         >
           <Link to="/privacy">
             <Button
@@ -139,16 +134,14 @@ function TermsPage() {
               Privacy policy
             </Button>
           </Link>
-        </HashBlock>
-        <HashBlock
+        </Block>
+        <Block
           title="Changes to Terms of Use"
           description="The service provider may revise these Terms without obtaining the User's prior consent, and the User shall consent to this. The revised Terms of Use shall take effect from the time they are posted on this service."
-          to="/terms#change-to-terms-of-use"
         />
-        <HashBlock
+        <Block
           title="Contact"
           description="If you have any comments, questions, complaints, or other inquiries regarding the handling of user information regarding the terms of use of this service, please contact us using the email(support@case-d.com)."
-          to="/terms#contact"
         />
       </Box>
     </GeneralLayout>
