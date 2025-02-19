@@ -8,7 +8,7 @@ import Box from "@components/atoms/Box";
 import Button from "@components/atoms/Button";
 import Typography from "@components/atoms/Typography";
 
-import i18n from "@utils/i18n";
+import { matchSupportLanguage } from "@utils/i18n";
 
 import { ImageBox, StyledIntro, SubTitle, Title, TitleBox, ImageRatioBox } from "./Intro.styles";
 
@@ -19,7 +19,7 @@ const PlandyMockupImage = {
 };
 
 function Intro() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   return (
     <StyledIntro>
@@ -30,7 +30,11 @@ function Intro() {
           <Button
             variant="text"
             startIcon={<img src={AppStoreIcon} width={24} height={24} alt="App Store" />}
-            onClick={() => window.open("https://apps.apple.com/us/app/id6736831438")}
+            onClick={() =>
+              window.open(
+                `https://apps.apple.com/${matchSupportLanguage(i18n.resolvedLanguage).countries[0]}/app/id6736831438`
+              )
+            }
           >
             <Typography ml={1}>Download on</Typography>
             <Typography variant="title" fontWeight={500}>
