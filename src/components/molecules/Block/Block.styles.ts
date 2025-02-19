@@ -6,10 +6,15 @@ export const StyledBlock = styled.div`
     padding: ${({ theme: { spacing } }) => `0 ${spacing(2.5)}px`};
     & li {
       padding: ${({ theme: { spacing } }) => `${spacing(0.5)}px 0`};
+      line-height: 1.5;
       & ul {
-        list-style: square;
+        list-style: circle;
       }
     }
+  }
+
+  a {
+    text-decoration: underline;
   }
 `;
 
