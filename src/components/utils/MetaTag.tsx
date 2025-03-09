@@ -25,7 +25,7 @@ function MetaTag({
   const { i18n } = useTranslation();
 
   const pageTitle = `${title}${hideTitleSuffix ? "" : " - Plandy"}`;
-  const country = matchSupportLanguage(i18n.resolvedLanguage).countries[0];
+  const country = matchSupportLanguage(i18n.resolvedLanguage).country;
   const url = `https://www.plandy.app${country === "us" ? "" : `/${country}`}${pathname}`;
 
   return (

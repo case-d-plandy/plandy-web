@@ -25,11 +25,18 @@ export enum LangCode {
   KO = "ko",
   JA = "ja"
 }
+
+export enum CountryCode {
+  US = "us",
+  KR = "kr",
+  JP = "jp"
+}
+
 export type Language = {
   name: string;
   value: string;
   keywords: string[];
-  countries: string[];
+  country: (typeof CountryCode)[keyof typeof CountryCode];
   fullLangCode: string;
   langCode: (typeof LangCode)[keyof typeof LangCode];
 };
@@ -39,7 +46,7 @@ export const SupportLanguage: Record<"ENGLISH" | "KOREAN" | "JAPANESE", Language
     name: "English",
     value: "english",
     keywords: ["english", "en", "en-us", "us"],
-    countries: ["us"],
+    country: CountryCode.US,
     fullLangCode: "en-US",
     langCode: LangCode.EN
   },
@@ -47,7 +54,7 @@ export const SupportLanguage: Record<"ENGLISH" | "KOREAN" | "JAPANESE", Language
     name: "한국어",
     value: "korean",
     keywords: ["korean", "ko", "ko-kr", "kr"],
-    countries: ["kr"],
+    country: CountryCode.KR,
     fullLangCode: "ko-KR",
     langCode: LangCode.KO
   },
@@ -55,7 +62,7 @@ export const SupportLanguage: Record<"ENGLISH" | "KOREAN" | "JAPANESE", Language
     name: "日本語",
     value: "japanese",
     keywords: ["japanese", "ja", "ja-jp", "jp"],
-    countries: ["jp"],
+    country: CountryCode.JP,
     fullLangCode: "ja-JP",
     langCode: LangCode.JA
   }
@@ -80,7 +87,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "en",
+    fallbackLng: LangCode.EN,
     interpolation: {
       escapeValue: false
     }

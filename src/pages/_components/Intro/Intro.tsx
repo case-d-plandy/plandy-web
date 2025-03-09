@@ -32,7 +32,7 @@ function Intro() {
             startIcon={<img src={AppStoreIcon} width={24} height={24} alt="App Store" />}
             onClick={() =>
               window.open(
-                `https://apps.apple.com/${matchSupportLanguage(i18n.resolvedLanguage).countries[0]}/app/id6736831438`
+                `https://apps.apple.com/${matchSupportLanguage(i18n.resolvedLanguage).country}/app/id6736831438`
               )
             }
           >
