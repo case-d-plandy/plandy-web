@@ -1,4 +1,4 @@
-# robots.txt for https://plandy.app/
+# robots.txt for https://www.plandy.app/
 
 User-agent: *
 Allow: /
