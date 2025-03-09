@@ -1,10 +1,11 @@
+import "@utils/i18n";
+
 import { StrictMode, Suspense } from "react";
 
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
-import "@utils/i18n";
 
-import { createRoot } from "react-dom/client";
+import { hydrateRoot, createRoot } from "react-dom/client";
 
 import Loading from "@components/utils/Loading";
 import ThemeProvider from "@providers/ThemeProvider";
@@ -14,7 +15,8 @@ import App from "./App";
 
 GoogleFirebase.initialize();
 
-createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root")!;
+const initialChildren = (
   <StrictMode>
     <HelmetProvider>
       <ThemeProvider>
@@ -27,3 +29,9 @@ createRoot(document.getElementById("root")!).render(
     </HelmetProvider>
   </StrictMode>
 );
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, initialChildren);
+} else {
+  createRoot(rootElement).render(initialChildren);
+}
