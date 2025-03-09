@@ -1,6 +1,6 @@
-# robots.txt for https://plandy.case-d.com/
+# robots.txt for https://www.plandy.app/
 
 User-agent: *
 Allow: /
 
-Sitemap: https://www.plandy.case-d.com/sitemap.xml
+Sitemap: https://www.plandy.app/sitemap.xml

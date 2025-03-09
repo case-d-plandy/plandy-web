@@ -9,9 +9,9 @@ import { Copyright, Divider, InfoBox, PolicyButtonGroup, StyledFooter } from "./
 
 function Footer() {
   const { t } = useTranslation();
-  const { lang } = useParams();
+  const { country } = useParams();
 
-  const prefixUrlLang = lang ? `/${lang}` : "";
+  const prefixUrlCountry = country ? `/${country}` : "";
 
   const handleLogEvent = (label: string) => {
     GoogleFirebase.logEvent("click_top_nav", {
@@ -26,12 +26,12 @@ function Footer() {
         <InfoBox>
           <Copyright>Copyright © {new Date().getFullYear()} Plandy</Copyright>
           <PolicyButtonGroup>
-            <Link to={`${prefixUrlLang}/terms`} onClick={() => handleLogEvent("terms")}>
+            <Link to={`${prefixUrlCountry}/terms`} onClick={() => handleLogEvent("terms")}>
               <Button variant="text" size="small">
                 {t("terms")}
               </Button>
             </Link>
-            <Link to={`${prefixUrlLang}/privacy`} onClick={() => handleLogEvent("privacy")}>
+            <Link to={`${prefixUrlCountry}/privacy`} onClick={() => handleLogEvent("privacy")}>
               <Button variant="text" size="small">
                 {t("privacy")}
               </Button>

@@ -16,13 +16,13 @@ function Header() {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const { lang } = useParams();
+  const { country } = useParams();
 
   const mode = useThemeStore((state) => state.mode);
   const updateTrigger = useThemeStore((state) => state.updateTrigger);
   const updateMode = useThemeStore((state) => state.updateMode);
 
-  const prefixUrlLang = lang ? `/${lang}` : "";
+  const prefixUrlCountry = country ? `/${country}` : "";
 
   const handleClick = () => {
     updateTrigger("manual");
@@ -31,7 +31,7 @@ function Header() {
   };
 
   const handleChangeLang = (newLang?: string) => {
-    navigate(`/${newLang}${pathname.replace(prefixUrlLang, "")}`);
+    navigate(`/${matchSupportLanguage(newLang).country}${pathname.replace(prefixUrlCountry, "")}`);
   };
 
   const handleLogEvent = (label: string) => {
@@ -44,7 +44,7 @@ function Header() {
     <StyledHeader id="header">
       <Container>
         <HeaderInner>
-          <Link to={`${prefixUrlLang}/`} onClick={() => handleLogEvent("logo")}>
+          <Link to={`${prefixUrlCountry}/`} onClick={() => handleLogEvent("logo")}>
             <Button variant="text" size="small">
               <Logo>
                 <img width={30} height={30} src="/icons/apple-icon.png" alt="Plandy Logo" />
@@ -52,12 +52,12 @@ function Header() {
             </Button>
           </Link>
           <Adornment>
-            <Link to={`${prefixUrlLang}/faq`} onClick={() => handleLogEvent("faq")}>
+            <Link to={`${prefixUrlCountry}/faq`} onClick={() => handleLogEvent("faq")}>
               <Button variant="text" size="small">
                 {t("faq")}
               </Button>
             </Link>
-            <Link to={`${prefixUrlLang}/guide`} onClick={() => handleLogEvent("guide")}>
+            <Link to={`${prefixUrlCountry}/guide`} onClick={() => handleLogEvent("guide")}>
               <Button variant="text" size="small">
                 {t("guide")}
               </Button>
