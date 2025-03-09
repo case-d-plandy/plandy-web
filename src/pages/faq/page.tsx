@@ -27,7 +27,7 @@ function FaqPage() {
         <FagList />
       </GeneralLayout>
       <script type="application/ld+json">
-        {`"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","name":"${t("faq")}"}]`}
+        {`{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","name":"${t("faq")}"}]}`}
       </script>
     </>
   );

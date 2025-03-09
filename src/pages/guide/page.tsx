@@ -28,7 +28,7 @@ function GuidePage() {
         </Typography>
       </GeneralLayout>
       <script type="application/ld+json">
-        {`"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"2","name":"${t("guide")}"}]`}
+        {`{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"2","name":"${t("guide")}"}]}`}
       </script>
     </>
   );

@@ -43,10 +43,10 @@ function Page() {
 }`}
       </script>
       <script type="application/ld+json">
-        {`"@context": "http://schema.org","@id": "https://www.plandy.app/#website","@type": "WebSite","url": "https://www.plandy.app/","name": "Plandy"`}
+        {`{"@context": "http://schema.org","@id": "https://www.plandy.app/#website","@type": "WebSite","url": "https://www.plandy.app/","name": "Plandy"}`}
       </script>
       <script type="application/ld+json">
-        {`"@context": "http://schema.org","@id": "https://www.plandy.app/#webpage","@type": "WebPage","url": "https://www.plandy.app/","name": "Plandy"`}
+        {`{"@context": "http://schema.org","@id": "https://www.plandy.app/#webpage","@type": "WebPage","url": "https://www.plandy.app/","name": "Plandy"}`}
       </script>
     </>
   );
