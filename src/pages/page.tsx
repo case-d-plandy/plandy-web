@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
+import { useParams } from "react-router-dom";
+
 import GeneralLayout from "@components/layouts/GeneralLayout";
 import Footer from "@components/molecules/Footer";
 import Header from "@components/molecules/Header";
@@ -10,6 +12,7 @@ import Intro from "@pages/_components/Intro";
 import { GoogleFirebase } from "@utils/google-firebase";
 
 function Page() {
+  const { country } = useParams();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -42,11 +45,26 @@ function Page() {
   ]
 }`}
       </script>
+      {!country?.length && (
+        <script type="application/ld+json">
+          {`
+{
+  "@context": "http://schema.org",
+  "@id": "https://www.plandy.app/#website",
+  "@type": "WebSite",
+  "url": "https://www.plandy.app/","name": "Plandy"
+}`}
+        </script>
+      )}
       <script type="application/ld+json">
-        {`{"@context": "http://schema.org","@id": "https://www.plandy.app/#website","@type": "WebSite","url": "https://www.plandy.app/","name": "Plandy"}`}
-      </script>
-      <script type="application/ld+json">
-        {`{"@context": "http://schema.org","@id": "https://www.plandy.app/#webpage","@type": "WebPage","url": "https://www.plandy.app/","name": "Plandy"}`}
+        {`
+{
+  "@context": "http://schema.org",
+  "@id": "https://www.plandy.app/${country ? `/${country}` : ""}#webpage",
+  "@type": "WebPage",
+  "url": "https://www.plandy.app/${country ? `/${country}` : ""}",
+  "name": "Plandy"
+}`}
       </script>
     </>
   );
